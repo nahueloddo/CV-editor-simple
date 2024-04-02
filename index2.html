@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículum</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-900">
+    <div id="hoja-a4" class="max-w-2xl mx-auto bg-white shadow-lg px-8">
+        <div id="titulo" class="font-semibold text-4xl text-center py-4">Evelyn Mailen Scott</div>
+        <div id="subtitulo" class="font-medium text-4xl text-center hidden">Descripción</div>		
+        <div id="encabezado" class="flex items-center mt-5 mb-8 px-2">
+            <div id="foto" class="flex-shrink-0 mr-8 relative hidden">
+                <div class="w-40 h-40 rounded-full foto-border border-4 overflow-hidden">
+                    <img id="imagen-foto" src="default-img.png" alt="Foto" class="w-40 h-40 object-cover">
+                </div>
+                <div class="boton-foto bottom-10 right-5">
+                    <input type="file" id="seleccionarFoto" style="display: none;" onchange="mostrarFoto(this)">
+                    <button class="boton boton-foto float-right" onclick="document.getElementById('seleccionarFoto').click()"><i class="fa fa-plus"></i></button>
+                </div>
+            </div>
+			<div id="informacion-personal" class="flex-1 flex-col">
+    <div class="mb-4 mt-4 flex items-center">
+        <i class="fa fa-calendar mx-10 mr-5"></i>
+        <label for="fecha-nacimiento" class="w-1/4 font-semibold">Fecha de Nacimiento</label><textarea type="text" id="fecha-nacimiento" class="block font-medium w-3/4 px-2 none" placeholder="DD/MM/YYYY (Ej: 16/05/2005)" style="height:25px"></textarea>
+    </div>
+    <div class="mb-4 mt-4 flex items-center">
+        <i class="fa fa-map-marker mx-11 mr-6"></i>
+        <label for="ubicacion" class="w-1/4 font-semibold">Ubicación</label><textarea type="text" id="ubicacion" class="block font-medium w-3/4 px-2 none" placeholder="Localidad, País (Ej: Buenos Aires, Argentina)" style="height:25px"></textarea>
+    </div>
+    <div class="mb-4 mt-4 flex items-center">
+        <i class="fa fa-envelope mx-10 mr-5"></i>
+        <label for="email" class="w-1/4 font-semibold">Correo electrónico</label><textarea type="text" id="email" class="block font-medium w-3/4 px-2 none" placeholder="Ej: mail@example.com" style="height:25px"></textarea>
+    </div>
+    <div class="mb-4 mt-4 flex items-center">
+        <i class="fa fa-phone mx-10 mr-6"></i>
+        <label for="telefono" class="w-1/4 font-semibold">Teléfono</label><textarea type="tel" id="telefono" class="block font-medium w-3/4 px-2 none" placeholder="Ej: (+54) 11 1234-5678" style="height:25px"></textarea>
+    </div>
+</div>
+
+        </div>
+        
+        <!-- Extracto -->
+        <div class="seccion mb-8 px-10">
+            <h2 class="text-2xl font-medium mb-4 title-color border-b border-gray-300">Extracto</h2>
+            <div id="extracto" class="editor px-2" contenteditable="true">
+                <span class="placeholder">Escribe aquí...</span>
+            </div>
+        </div>
+
+        <!-- Trayectoria Laboral -->
+        <div class="seccion mb-8 px-10">
+            <h2 class="text-2xl font-medium mb-4 title-color border-b border-gray-300">Trayectoria Laboral</h2>
+            <div id="trayectoria-laboral">
+                <div class="contenido mb-4 flex items-start">
+                    <textarea class="mr-6 w-1/3 rounded border-gray-300 py-0 px-2 mr-2 none" placeholder="Fecha"></textarea>                    
+                    <div class="editor w-2/3 mr-2 px-2 editor-mini" contenteditable="true">
+                        <span class="placeholder">Escribe aquí...</span>
+                    </div>
+                    <button class="boton boton-agregar" onclick="agregarFechaContenido(this)"><i class="fa fa-plus-circle"></i></button>&nbsp;
+                    <button class="boton boton-eliminar invisible" onclick="eliminarFechaContenido(this)"><i class="fa fa-trash"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Formación Educativa -->
+        <div class="seccion mb-8 px-10">
+            <h2 class="text-2xl font-medium mb-4 title-color border-b border-gray-300">Formación Educativa</h2>
+            <div id="formacion-educativa">
+                <div class="contenido mb-4 flex items-start">
+                    <textarea class="mr-6 w-1/3 rounded border-gray-300 py-0 px-2 none" placeholder="Fecha"></textarea>                    
+                    <div class="editor w-2/3 mr-2 px-2 editor-mini" contenteditable="true">
+                        <span class="placeholder">Escribe aquí...</span>
+                    </div>
+                    <button class="boton boton-agregar" onclick="agregarFechaContenido(this)"><i class="fa fa-plus-circle mr-2"></i></button>&nbsp;
+                    <button class="boton boton-eliminar invisible" onclick="eliminarFechaContenido(this)"><i class="fa fa-trash"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Otros conocimientos -->
+        <div class="seccion mb-8 px-10">
+            <h2 class="text-2xl font-medium mb-4 title-color border-b border-gray-300">Otros conocimientos</h2>
+            <div id="otros-conocimientos" class="editor px-2" contenteditable="true">
+                <span class="placeholder">Escribe aquí...</span>
+            </div>
+        </div>
+
+        <!-- Referencias -->
+        <div class="seccion mb-8 px-10">
+            <h2 class="text-2xl font-medium mb-4 title-color border-b border-gray-300">Referencias</h2>
+            <div id="referencias" class="editor px-2" contenteditable="true">
+                <span class="placeholder">Escribe aquí...</span>
+            </div>
+        </div>
+
+        <!-- Remuneración pretendida -->
+        <div class="seccion mb-8 px-10">
+            <h2 class="text-2xl font-medium mb-4 title-color border-b border-gray-300">Remuneración pretendida</h2>
+            <div class="editor px-2" contenteditable="true">
+                <span class="placeholder">Escribe aquí...</span>
+            </div>
+        </div>
+
+        <!-- Advertencia y botón guardar PDF -->
+        <div id="advertencia" class="bg-red-100 border border-red-400 font-medium text-red-700 mx-10 px-4 py-3 rounded-md mb-8 hidden">
+            <p><i class="fa fa-exclamation-circle mr-3"></i>¡Tu CV está incompleto o vacío! Por favor, completa todos los campos antes de guardar como PDF.</p>
+        </div>
+        <button id="guardarPDF" class="bg-blue-500 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded guardarPDF" onclick="verificarCampos()"><i class="fa fa-file-pdf-o mr-3"></i>Guardar como PDF</button>     
+    </div>
+    <script src="https://cdn.ckeditor.com/4.17.2/basic/ckeditor.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+/* styles.css */
+
+* {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+
+#titulo {
+    font-size: 50px;
+    text-align: center;
+    line-height: 4rem;
+}
+
+#subtitulo {
+    font-size: 25px;
+    text-align: center;
+    line-height: 2.5rem;
+}
+
+.title-color {
+    color: rgba(47, 113, 160); /* Azul marino de Tailwind CSS */
+    padding-bottom: 5px;
+}
+
+#hoja-a4 {
+    max-width: 100%; /* Ancho máximo */
+    padding: 20px; /* Margen interior */
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
+    margin: auto;
+}
+.foto-border{
+	border-color:#2f71a0;
+}
+
+.boton {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    border: 3px solid #fff;
+    padding: 5px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.boton i {
+    margin-right: 0px;
+}
+
+.boton-agregar {
+    background-color: #007bff; /* Azul */
+}
+
+.boton-eliminar {
+    background-color: #dc3545; /* Rojo */
+}
+
+.boton-foto {
+    position: relative;
+    overflow: hidden;
+}
+
+.boton-foto input[type="file"] {
+    position: absolute;
+    font-size: 100px;
+    opacity: 0;
+    right: 0;
+    top: 0;
+}
+
+.boton-foto button {
+    z-index: 1;
+}
+
+.guardarPDF {
+    margin: auto;
+	width: 100%;
+}
+
+.editor {
+    height: 50px;
+    font-family: 'Poppins', sans-serif;
+}
+.none::-webkit-resizer {
+    display: none;
+}
+.cke_editable, .placeholder, .empty{
+	color:gray;	
+}
+
+textarea:-moz-placeholder, /* Firefox 18- */
+textarea::-moz-placeholder, /* Firefox 19+ */
+textarea:-ms-input-placeholder, /* IE 10+ */
+textarea::-webkit-input-placeholder, /* Webkit based */
+textarea::placeholder { /* Modern browsers */
+  color: gray;  
+}
+#trayectoria-laboral .items-start,
+#formacion-educativa .items-start	{
+	overflow: clip;		
+}
+.editor-mini{
+	max-width:66.6666%;
+	overflow:hidden;
+}
+
+@media (max-width: 640px) {
+    #encabezado {
+        flex-direction: column; /* Cambia la dirección del flex para que los elementos se apilen verticalmente */
+        align-items: center; /* Centra los elementos horizontalmente */
+    }
+    #foto {
+        margin-bottom: 20px; /* Añade un margen debajo de la foto para separarla de la información personal */
+    }
+    #informacion-personal {
+        width: 100%; /* Asegura que el div de información personal cubra todo el ancho de la pantalla */
+        display: flex; /* Asegura que el div sea un contenedor flex */
+        flex-direction: column; /* Asegura que los elementos dentro del div se apilen verticalmente */
+        justify-content: flex-start; /* Justifica los elementos al inicio del contenedor */
+    }
+    #informacion-personal .flex {
+        flex-direction: column; /* Asegura que los iconos y los inputs se apilen verticalmente */
+        justify-content: flex-start; /* Justifica los elementos al inicio del contenedor */
+    }
+    #informacion-personal .fa {
+		display: none;	
+    }
+    #informacion-personal textarea {
+		margin-bottom: 5px;
+        text-align: justify;
+        width: 100%;		
+    }
+    #informacion-personal label {
+		margin-bottom: 5px;
+		padding-left: 0.5rem;
+        width: 100%;
+		border-bottom: 1px solid rgb(209 213 219);
+		padding-bottom: 5px;		
+    }	
+    #informacion-personal .mb-4,
+    #informacion-personal .mt-4 {
+        margin-bottom: 0; /* Elimina el margen inferior para reducir el espacio entre los elementos */
+        margin-top: 0; /* Elimina el margen superior para reducir el espacio entre los elementos */
+    }
+
+    #trayectoria-laboral .editor > div,
+	#trayectoria-laboral .editor > div	{
+		max-height:25px;
+		max-width:33.33333%;
+		margin-bottom:20px;		
+    }
+    #trayectoria-laboral .items-start,
+	#formacion-educativa .items-start	{
+		flex-wrap:wrap;		
+    }
+	.editor {
+		max-width:100%;
+		overflow:hidden;
+	}
+
+	.editor-mini {
+		max-width:66.6666%;
+		margin-bottom:20px;	
+	}
+}
+@media screen and (min-width: 640px) {
+    /* Cambios para pantallas más grandes */
+    #hoja-a4 {
+        width: 80%; /* Ancho del 80% del contenedor padre */
+    }
+    .guardarPDF {
+        margin-left: 0!important;
+		width: auto;		
+    }
+}
+
+@media screen and (min-width: 768px) {
+    /* Cambios para pantallas medianas */
+    #hoja-a4 {
+        width: 70%; /* Ancho del 70% del contenedor padre */
+    }
+    .guardarPDF {
+        margin-left: 70%!important;
+		width: auto;		
+    }
+
+    /* Ajustes para pantallas grandes */
+    #informacion-personal > div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    #informacion-personal > div > input {
+        margin-left: 1rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    /* Cambios para pantallas grandes */
+    #hoja-a4 {
+        width: 60%; /* Ancho del 60% del contenedor padre */
+    }
+    .guardarPDF {
+        margin-left: 80%!important;
+		width: auto;
+    }
+}
+
+@media print {
+    body, html {
+        width: 210mm; /* Ancho de una hoja A4 */
+        height: 297mm; /* Altura de una hoja A4 */
+    }
+
+    #guardarPDF {
+        display: none;
+    }
+
+    #hoja-a4 {
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+    }
+    .boton, .boton-foto button {
+        display: none;
+    }
+}
+
