@@ -88,15 +88,20 @@ editorMiniDiv.addEventListener("input", e => {
         editorMiniDiv.style.overflowY = 'hidden'; // Ocultar la barra de desplazamiento si el contenido no excede la altura máxima
     }
 });
-
         
-    function agregarFechaContenido(boton) {
+function agregarFechaContenido(boton) {
     const contenedor = boton.parentElement;
     const nuevoContenido = contenedor.cloneNode(true);
     
     // Vaciar el contenido clonado
     const editorClonado = nuevoContenido.querySelector('.editor');
-    editorClonado.innerHTML = '<span class="placeholder">Escribe aquí...</span>'; // Vaciar el contenido
+    editorClonado.innerHTML = ''; // Vaciar el contenido
+
+    // Agregar el placeholder al editor clonado
+    const placeholder = document.createElement('span');
+    placeholder.classList.add('placeholder');
+    placeholder.textContent = 'Escribe aquí...';
+    editorClonado.appendChild(placeholder);
 
     // Insertar el bloque clonado en el DOM
     contenedor.parentNode.insertBefore(nuevoContenido, contenedor.nextSibling);
@@ -119,7 +124,6 @@ function eliminarFechaContenido(boton) {
         botonEliminar.classList.add('invisible');
     }
 }
-
 
         function mostrarFoto(input) {
             const reader = new FileReader();
