@@ -15,7 +15,7 @@
     <div id="hoja-a4" class="max-w-2xl mx-auto bg-white shadow-lg px-8">
         <div id="titulo" class="font-semibold text-4xl text-center py-4">Nahuel Alejandro Oddo</div>
         <div id="subtitulo" class="font-medium text-4xl text-center">Museólogo y Especialista informático</div>		
-        <div id="encabezado" class="flex items-center my-8 px-10">
+        <div id="encabezado" class="flex items-center my-4 px-10">
             <div id="foto" class="flex-shrink-0 mr-8 relative">
                 <div class="w-40 h-40 rounded-full foto-border border-4 overflow-hidden">
                     <img id="imagen-foto" src="default-img.png" alt="Foto" class="w-40 h-40 object-cover">
@@ -45,11 +45,26 @@
 			</div>
 		</div>
         
-        <!-- Extracto -->
+        <!-- Objetivo Laboral -->
         <div class="seccion mb-8 px-10">
-            <h2 class="text-2xl font-medium mb-4 title-color border-b border-gray-300">Extracto</h2>
+            <h2 class="text-2xl font-medium mb-4 title-color border-b border-gray-300">Objetivo Laboral</h2>
             <div id="extracto" class="editor px-2" contenteditable="true">
                 <span class="placeholder">Escribe aquí...</span>
+            </div>
+        </div>
+
+        <!-- Formación Académica -->
+        <div class="seccion mb-8 px-10">
+            <h2 class="text-2xl font-medium mb-4 title-color border-b border-gray-300">Formación Académica</h2>
+            <div id="formacion-educativa">
+                <div class="contenido mb-4 flex items-start">
+                    <textarea class="mr-6 w-1/3 rounded border-gray-300 py-0 px-2 none" placeholder="Fecha"></textarea>                    
+                    <div class="editor w-2/3 mr-2 px-2 editor-mini" contenteditable="true">
+                        <span class="placeholder">Escribe aquí...</span>
+                    </div>
+                    <button class="boton boton-agregar" onclick="agregarFechaContenido(this)"><i class="fa fa-plus-circle mr-2"></i></button>&nbsp;
+                    <button class="boton boton-eliminar invisible" onclick="eliminarFechaContenido(this)"><i class="fa fa-trash"></i></button>
+                </div>
             </div>
         </div>
 
@@ -68,24 +83,9 @@
             </div>
         </div>
 
-        <!-- Formación Educativa -->
+        <!-- Otros Conocimientos y Proyectos -->
         <div class="seccion mb-8 px-10">
-            <h2 class="text-2xl font-medium mb-4 title-color border-b border-gray-300">Formación Educativa</h2>
-            <div id="formacion-educativa">
-                <div class="contenido mb-4 flex items-start">
-                    <textarea class="mr-6 w-1/3 rounded border-gray-300 py-0 px-2 none" placeholder="Fecha"></textarea>                    
-                    <div class="editor w-2/3 mr-2 px-2 editor-mini" contenteditable="true">
-                        <span class="placeholder">Escribe aquí...</span>
-                    </div>
-                    <button class="boton boton-agregar" onclick="agregarFechaContenido(this)"><i class="fa fa-plus-circle mr-2"></i></button>&nbsp;
-                    <button class="boton boton-eliminar invisible" onclick="eliminarFechaContenido(this)"><i class="fa fa-trash"></i></button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Otros conocimientos -->
-        <div class="seccion mb-8 px-10">
-            <h2 class="text-2xl font-medium mb-4 title-color border-b border-gray-300">Otros conocimientos</h2>
+            <h2 class="text-2xl font-medium mb-4 title-color border-b border-gray-300">Otros Conocimientos y Proyectos</h2>
             <div id="otros-conocimientos" class="editor px-2" contenteditable="true">
                 <span class="placeholder">Escribe aquí...</span>
             </div>
@@ -99,9 +99,9 @@
             </div>
         </div>
 
-        <!-- Remuneración pretendida -->
+        <!-- Remuneración Pretendida -->
         <div class="seccion mb-8 px-10">
-            <h2 class="text-2xl font-medium mb-4 title-color border-b border-gray-300">Remuneración pretendida</h2>
+            <h2 class="text-2xl font-medium mb-4 title-color border-b border-gray-300">Remuneración Pretendida</h2>
             <div class="editor px-2" contenteditable="true">
                 <span class="placeholder">Escribe aquí...</span>
             </div>
