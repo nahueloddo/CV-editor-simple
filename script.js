@@ -80,7 +80,7 @@ editorMiniDiv.addEventListener("input", e => {
     editorMiniDiv.style.height = (editorMiniDiv.scrollHeight + 2) + 'px'; // Ajustar la altura según el contenido
 
     // Aplicar el max-height
-    const maxHeight = 100; // Establecer la altura máxima deseada
+    const maxHeight = 120; // Establecer la altura máxima deseada
     if (editorMiniDiv.scrollHeight > maxHeight) {
         editorMiniDiv.style.overflowY = 'scroll'; // Hacer que el contenido sea desplazable verticalmente si excede la altura máxima
         editorMiniDiv.style.height = maxHeight + 'px'; // Establecer la altura máxima
@@ -90,23 +90,36 @@ editorMiniDiv.addEventListener("input", e => {
 });
 
         
-        function agregarFechaContenido(boton) {
-            const contenedor = boton.parentElement;
-            const nuevoContenido = contenedor.cloneNode(true);
-            contenedor.parentNode.insertBefore(nuevoContenido, contenedor.nextSibling);
-            const botonEliminar = nuevoContenido.querySelector('.boton-eliminar');
-            botonEliminar.classList.remove('invisible');
-        }
+    function agregarFechaContenido(boton) {
+    const contenedor = boton.parentElement;
+    const nuevoContenido = contenedor.cloneNode(true);
+    
+    // Vaciar el contenido clonado
+    const editorClonado = nuevoContenido.querySelector('.editor');
+    editorClonado.innerHTML = ''; // Vaciar el contenido
 
-        function eliminarFechaContenido(boton) {
-            const contenedor = boton.parentElement;
-            contenedor.remove();
-            // Oculta el botón de eliminar solo si no hay más elementos en el contenedor
-            if (contenedor.parentNode.children.length === 1) {
-                const botonEliminar = contenedor.querySelector('.boton-eliminar');
-                botonEliminar.classList.add('invisible');
-            }
-        }
+    // Insertar el bloque clonado en el DOM
+    contenedor.parentNode.insertBefore(nuevoContenido, contenedor.nextSibling);
+
+    // Inicializar CKEditor en el bloque clonado
+    CKEDITOR.inline(editorClonado);
+
+    // Mostrar el botón de eliminar
+    const botonEliminar = nuevoContenido.querySelector('.boton-eliminar');
+    botonEliminar.classList.remove('invisible');
+}
+
+function eliminarFechaContenido(boton) {
+    const contenedor = boton.parentElement;
+    contenedor.remove();
+
+    // Oculta el botón de eliminar solo si no hay más elementos en el contenedor
+    if (contenedor.parentNode.children.length === 1) {
+        const botonEliminar = contenedor.querySelector('.boton-eliminar');
+        botonEliminar.classList.add('invisible');
+    }
+}
+
 
         function mostrarFoto(input) {
             const reader = new FileReader();
