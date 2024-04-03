@@ -96,7 +96,7 @@ editorMiniDiv.addEventListener("input", e => {
     
     // Vaciar el contenido clonado
     const editorClonado = nuevoContenido.querySelector('.editor');
-    editorClonado.innerHTML = ''; // Vaciar el contenido
+    editorClonado.innerHTML = '<span class="placeholder">Escribe aquí...</span>'; // Vaciar el contenido
 
     // Insertar el bloque clonado en el DOM
     contenedor.parentNode.insertBefore(nuevoContenido, contenedor.nextSibling);
