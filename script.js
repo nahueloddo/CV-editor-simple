@@ -28,7 +28,7 @@
 function guardarProgreso() {
     // Obtener el contenido de los campos y elementos que deseas guardar
     const contenido = {
-        imagenFoto: document.getElementById('imagen-foto').value,
+        imagenFoto: document.getElementById('imagen-foto').innerHTML,
         fechaNacimiento: document.getElementById('fecha-nacimiento').value,
         ubicacion: document.getElementById('ubicacion').value,
         email: document.getElementById('email').value,
@@ -37,9 +37,9 @@ function guardarProgreso() {
         fecha1: document.getElementById('fecha-1').value,
         contenido1: document.getElementById('contenido-1').innerHTML, // Obtener el contenido HTML del div
         fecha2: document.getElementById('fecha-2').value,
-        otrosConocimientos: document.getElementById('otros-conocimientos').value,
-        referencias: document.getElementById('referencias').value,
-        remuneracionPretendida: document.getElementById('remuneracion-pretendida').value
+        otrosConocimientos: document.getElementById('otros-conocimientos').innerHTML,
+        referencias: document.getElementById('referencias').innerHTML,
+        remuneracionPretendida: document.getElementById('remuneracion-pretendida').innerHTML
         // Agregar más campos según sea necesario
     };
 
