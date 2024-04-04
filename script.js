@@ -142,8 +142,29 @@ function ocultarBotonesProgreso() {
     });
 }
 
+
 // Obtener todos los elementos editables
-const editables = document.querySelectorAll('.editor');
+const editables = document.querySelectorAll('.editor, textarea');
+
+// Agregar evento input para ocultar advertencias y alertas al editar contenido
+editables.forEach(editable => {
+    editable.addEventListener('input', () => {
+        ocultarAdvertenciasYAlertas();
+    });
+});
+
+// Función para ocultar todas las advertencias y alertas
+function ocultarAdvertenciasYAlertas() {
+    const advertencias = document.querySelectorAll('.advertencia');
+    advertencias.forEach(advertencia => {
+        advertencia.classList.add('hidden');
+    });
+
+    const alertas = document.querySelectorAll('.alerta');
+    alertas.forEach(alerta => {
+        alerta.classList.add('hidden');
+    });
+}
 
 // Agregar evento focus para cambiar el color del texto cuando el usuario está escribiendo
 editables.forEach(editable => {
@@ -207,11 +228,11 @@ editorMiniDiv.addEventListener("input", e => {
         editorMiniDiv.style.overflowY = 'hidden'; // Ocultar la barra de desplazamiento si el contenido no excede la altura máxima
     }
 });
-        
+
 function agregarFechaContenido(boton) {
     const contenedor = boton.parentElement;
     const nuevoContenido = contenedor.cloneNode(true);
-    
+
     // Vaciar el contenido clonado
     const editorClonado = nuevoContenido.querySelector('.editor');
     editorClonado.innerHTML = ''; // Vaciar el contenido
@@ -246,27 +267,27 @@ function eliminarFechaContenido(boton) {
 
 function mostrarFoto(input) {
     const reader = new FileReader();
-    reader.onload = function(e) {
+    reader.onload = function (e) {
         const foto = document.getElementById('imagen-foto');
         foto.src = e.target.result;
     }
     reader.readAsDataURL(input.files[0]);
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     var editors = document.querySelectorAll('.editor');
 
-    editors.forEach(function(editor) {
+    editors.forEach(function (editor) {
         var placeholder = editor.querySelector('.placeholder');
 
-        editor.addEventListener('focus', function() {
+        editor.addEventListener('focus', function () {
             if (editor.textContent === placeholder.textContent) {
                 editor.textContent = '';
                 editor.classList.remove('empty');
             }
         });
 
-        editor.addEventListener('blur', function() {
+        editor.addEventListener('blur', function () {
             if (editor.textContent === '') {
                 editor.textContent = placeholder.textContent;
                 editor.classList.add('empty');
