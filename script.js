@@ -33,10 +33,11 @@ function guardarProgreso() {
         ubicacion: document.getElementById('ubicacion').value,
         email: document.getElementById('email').value,
         telefono: document.getElementById('telefono').value,
-        extracto: document.getElementById('extracto').value,
+        extracto: document.getElementById('extracto').innerHTML,
         fecha1: document.getElementById('fecha-1').value,
         contenido1: document.getElementById('contenido-1').innerHTML, // Obtener el contenido HTML del div
         fecha2: document.getElementById('fecha-2').value,
+        contenido2: document.getElementById('contenido-2').innerHTML, // Obtener el contenido HTML del div        
         otrosConocimientos: document.getElementById('otros-conocimientos').innerHTML,
         referencias: document.getElementById('referencias').innerHTML,
         remuneracionPretendida: document.getElementById('remuneracion-pretendida').innerHTML
@@ -64,25 +65,22 @@ function cargarProgreso() {
         const contenido = JSON.parse(contenidoJSON);
 
         // Actualizar los campos y elementos con el contenido guardado
-        document.getElementById('imagen-foto').value = contenido.imagenFoto;
+        document.getElementById('imagen-foto').innerHTML = contenido.imagenFoto;
         document.getElementById('fecha-nacimiento').value = contenido.fechaNacimiento;
         document.getElementById('ubicacion').value = contenido.ubicacion;
         document.getElementById('email').value = contenido.email;
         document.getElementById('telefono').value = contenido.telefono;
-        document.getElementById('extracto').value = contenido.extracto;
+        document.getElementById('extracto').innerHTML = contenido.extracto;
         document.getElementById('fecha-1').value = contenido.fecha1;
         document.getElementById('contenido-1').innerHTML = contenido.contenido1; // Asignar el contenido HTML al div
         document.getElementById('fecha-2').value = contenido.fecha2;
-        document.getElementById('otros-conocimientos').value = contenido.otrosConocimientos;
-        document.getElementById('referencias').value = contenido.referencias;
-        document.getElementById('remuneracion-pretendida').value = contenido.remuneracionPretendida;
+        document.getElementById('contenido-2').innerHTML = contenido.contenido2; // Asignar el contenido HTML al div        
+        document.getElementById('otros-conocimientos').innerHTML = contenido.otrosConocimientos;
+        document.getElementById('referencias').innerHTML = contenido.referencias;
+        document.getElementById('remuneracion-pretendida').innerHTML = contenido.remuneracionPretendida;
         // Actualiza más campos según sea necesario
 
-        // Mostrar la alerta de progreso cargado correctamente
-        mostrarAlertaProgresoCargado();
-    } else {
-        // Mostrar la alerta de progreso no encontrado
-        mostrarAlertaProgresoNoEncontrado();
+
     }
 }
 
