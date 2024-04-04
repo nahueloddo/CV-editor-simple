@@ -107,32 +107,37 @@
             </div>
         </div>
         
-        <!-- Alerta de progreso guardado exitosamente -->
-<div id="contenidoGuardado" class="bg-green-100 border border-green-400 font-medium text-green-700 mx-10 px-4 py-3 rounded-md mb-8 hidden">
-    <p><i class="fa fa-check-circle mr-3"></i>¡Tu progreso está guardado!</p>
-</div>
-
-<!-- Alerta de progreso cargado correctamente -->
-<div id="progresoCargado" class="bg-green-100 border border-green-400 font-medium text-green-700 mx-10 px-4 py-3 rounded-md mb-8 hidden">
-    <p><i class="fa fa-check-circle mr-3"></i>¡Se cargó exitosamente el contenido guardado!</p>
-</div>
-
-<!-- Alerta de progreso no encontrado -->
-<div id="progresoNoEncontrado" class="bg-red-100 border border-red-400 font-medium text-red-700 mx-10 px-4 py-3 rounded-md mb-8 hidden">
-    <p><i class="fa fa-exclamation-circle mr-3"></i>¡No se encontró ningún progreso guardado!</p>
-</div>
-
-<!-- Botón para guardar el progreso -->
-<button class="bg-blue-500 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded guardarProgreso" onclick="guardarProgreso()"><i class="fa fa-bookmark mr-3"></i>Guardar progreso</button>
-
-<!-- Botón para cargar el progreso más reciente -->
-<button class="bg-green-500 hover:bg-green-700 text-white font-medium py-2 px-4 rounded cargarProgreso" onclick="cargarProgreso()"><i class="fa fa-refresh mr-3"></i>Cargar progreso</button>
-
-<!-- Advertencia y botón guardar PDF -->
-<div id="advertencia" class="bg-red-100 border border-red-400 font-medium text-red-700 mx-10 px-4 py-3 rounded-md mb-8 hidden">
-    <p><i class="fa fa-exclamation-circle mr-3"></i>¡Tu CV está incompleto o vacío! Por favor, completa todos los campos antes de guardar como PDF.</p>
-</div>
-<button id="guardarPDF" class="bg-blue-500 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded guardarPDF" onclick="verificarCampos()"><i class="fa fa-file-pdf-o mr-3"></i>Guardar como PDF</button>     
+        <div class="botones-footer">
+            <!-- Alerta de progreso guardado exitosamente -->
+            <div id="contenidoGuardado" class="alerta bg-green-100 border border-green-400 font-medium text-green-700 hidden">
+                <p><i class="fa fa-check-circle mr-3"></i>¡Tu progreso está guardado!</p>
+            </div>
+        
+            <!-- Alerta de progreso cargado correctamente -->
+            <div id="progresoCargado" class="alerta bg-green-100 border border-green-400 font-medium text-green-700 hidden">
+                <p><i class="fa fa-check-circle mr-3"></i>¡Se cargó exitosamente el contenido guardado!</p>
+            </div>
+        
+            <!-- Alerta de progreso no encontrado -->
+            <div id="progresoNoEncontrado" class="alerta bg-red-100 border border-red-400 font-medium text-red-700 hidden">
+                <p><i class="fa fa-exclamation-circle mr-3"></i>¡No se encontró ningún progreso guardado!</p>
+            </div>
+        
+            <!-- Botón para guardar el progreso -->
+            <button class="guardarProgreso bg-blue-500 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded" onclick="guardarProgreso()">
+                <i class="fa fa-bookmark mr-3"></i>Guardar progreso</button>
+        
+            <!-- Botón para cargar el progreso más reciente -->
+            <button class="cargarProgreso bg-green-500 hover:bg-green-700 text-white font-medium py-2 px-4 rounded" onclick="cargarProgreso()">
+                <i class="fa fa-refresh mr-3"></i>Cargar progreso</button>
+        
+            <!-- Advertencia y botón guardar PDF -->
+            <div id="advertencia" class="advertencia bg-red-100 border border-red-400 font-medium text-red-700 hidden">
+                <p><i class="fa fa-exclamation-circle mr-3"></i>¡Tu CV está incompleto o vacío! Por favor, completa todos los campos antes de guardar como PDF.</p>
+            </div>
+            <button id="guardarPDF" class="guardarPDF bg-blue-500 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded" onclick="verificarCampos()">
+                <i class="fa fa-file-pdf-o mr-3"></i>Guardar como PDF</button>
+        </div>
     </div>
     <script src="https://cdn.ckeditor.com/4.17.2/basic/ckeditor.js"></script>
     <script src="script.js"></script>
