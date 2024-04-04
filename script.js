@@ -28,7 +28,7 @@
 function guardarProgreso() {
     // Obtener el contenido de los campos y elementos que deseas guardar
     const contenido = {
-        imagenFoto: document.getElementById('imagen-foto').innerHTML,
+        imagenFoto: document.getElementById('imagen-foto').value,
         fechaNacimiento: document.getElementById('fecha-nacimiento').value,
         ubicacion: document.getElementById('ubicacion').value,
         email: document.getElementById('email').value,
@@ -65,7 +65,7 @@ function cargarProgreso() {
         const contenido = JSON.parse(contenidoJSON);
 
         // Actualizar los campos y elementos con el contenido guardado
-        document.getElementById('imagen-foto').innerHTML = contenido.imagenFoto;
+        document.getElementById('imagen-foto').value = contenido.imagenFoto;
         document.getElementById('fecha-nacimiento').value = contenido.fechaNacimiento;
         document.getElementById('ubicacion').value = contenido.ubicacion;
         document.getElementById('email').value = contenido.email;
