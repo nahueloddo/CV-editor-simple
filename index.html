@@ -58,8 +58,8 @@
             <h2 class="text-2xl font-medium mb-4 title-color border-b border-gray-300">Formación Académica</h2>
             <div id="formacion-educativa">
                 <div class="contenido mb-4 flex items-start">
-                    <textarea class="font-medium mr-6 w-1/3 rounded border-gray-300 py-0 px-2 none" placeholder="Fecha"></textarea>                    
-                    <div class="editor w-2/3 mr-2 px-2 editor-mini" contenteditable="true">
+                    <textarea id="fecha-1" class="font-medium mr-6 w-1/3 rounded border-gray-300 py-0 px-2 none" placeholder="Fecha"></textarea>                    
+                    <div id="contenido-1" class="editor w-2/3 mr-2 px-2 editor-mini" contenteditable="true">
                         <span class="placeholder">Escribe aquí...</span>
                     </div>
                     <button class="boton boton-agregar" onclick="agregarFechaContenido(this)"><i class="fa fa-plus-circle mr-2"></i></button>&nbsp;
@@ -73,8 +73,8 @@
             <h2 class="text-2xl font-medium mb-4 title-color border-b border-gray-300">Trayectoria Laboral</h2>
             <div id="trayectoria-laboral">
                 <div class="contenido mb-4 flex items-start">
-                    <textarea class="font-medium mr-6 w-1/3 rounded border-gray-300 py-0 px-2 mr-2 none" placeholder="Fecha"></textarea>                    
-                    <div class="editor w-2/3 mr-2 px-2 editor-mini" contenteditable="true">
+                    <textarea id="fecha-2" class="font-medium mr-6 w-1/3 rounded border-gray-300 py-0 px-2 mr-2 none" placeholder="Fecha"></textarea>                    
+                    <div id="contenido-2" class="editor w-2/3 mr-2 px-2 editor-mini" contenteditable="true">
                         <span class="placeholder">Escribe aquí...</span>
                     </div>
                     <button class="boton boton-agregar" onclick="agregarFechaContenido(this)"><i class="fa fa-plus-circle"></i></button>&nbsp;
@@ -83,7 +83,7 @@
             </div>
         </div>
 
-        <!-- Otros Conocimientos y Proyectos -->
+        <!-- Otros Conocimientos -->
         <div class="seccion mb-8 px-10">
             <h2 class="text-2xl font-medium mb-4 title-color border-b border-gray-300">Otros Conocimientos</h2>
             <div id="otros-conocimientos" class="editor px-2" contenteditable="true">
@@ -102,11 +102,15 @@
         <!-- Remuneración Pretendida -->
         <div class="seccion mb-8 px-10">
             <h2 class="text-2xl font-medium mb-4 title-color border-b border-gray-300">Remuneración Pretendida</h2>
-            <div class="editor px-2" contenteditable="true">
+            <div id="remuneracion-pretendida" class="editor px-2" contenteditable="true">
                 <span class="placeholder">Escribe aquí...</span>
             </div>
         </div>
 
+        <!-- Botón para guardar el progreso -->
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded guardarProgreso" onclick="guardarProgreso()">Guardar progreso</button>
+        <!-- Botón para cargar el progreso más reciente -->
+        <button class="bg-green-500 hover:bg-green-700 text-white font-medium py-2 px-4 rounded cargarProgreso" onclick="cargarProgreso()">Cargar progreso</button>
         <!-- Advertencia y botón guardar PDF -->
         <div id="advertencia" class="bg-red-100 border border-red-400 font-medium text-red-700 mx-10 px-4 py-3 rounded-md mb-8 hidden">
             <p><i class="fa fa-exclamation-circle mr-3"></i>¡Tu CV está incompleto o vacío! Por favor, completa todos los campos antes de guardar como PDF.</p>

@@ -24,6 +24,68 @@
         window.print(); // Imprimir la página
     }
 }
+// Función para guardar el progreso
+function guardarProgreso() {
+    // Obtener el contenido de los campos y elementos que deseas guardar
+    const contenido = {
+        campo1: document.getElementById('imagen-foto').value,
+        campo2: document.getElementById('fecha-nacimiento').value,
+        campo3: document.getElementById('ubicacion').value,
+        campo4: document.getElementById('email').value,
+        campo5: document.getElementById('telefono').value,
+        campo6: document.getElementById('extracto').value,
+        campo7: document.getElementById('fecha-1').value,
+        campo8: document.getElementById('contenido-1').value,
+        campo9: document.getElementById('fecha-2').value,
+        campo10: document.getElementById('otros-conocimientos').value,
+        campo11: document.getElementById('referencias').value,
+        campo12: document.getElementById('remuneracion-pretendida').value,                                                     
+        // Agregar más campos según sea necesario
+    };
+
+    // Convertir el contenido a cadena JSON
+    const contenidoJSON = JSON.stringify(contenido);
+
+    // Guardar el contenido en el almacenamiento local del navegador
+    localStorage.setItem('progreso', contenidoJSON);
+
+    // Mostrar un mensaje de éxito o realizar cualquier otra acción necesaria
+    alert('Progreso guardado correctamente.');
+}
+
+// Función para cargar el progreso más reciente
+function cargarProgreso() {
+    // Obtener el contenido guardado del almacenamiento local
+    const contenidoJSON = localStorage.getItem('progreso');
+
+    // Verificar si hay contenido guardado
+    if (contenidoJSON) {
+        // Convertir la cadena JSON a objeto JavaScript
+        const contenido = JSON.parse(contenidoJSON);
+
+        // Actualizar los campos y elementos con el contenido guardado
+        document.getElementById('campo1').value = contenido.campo1;
+        document.getElementById('campo2').value = contenido.campo2;
+        document.getElementById('campo3').value = contenido.campo3;
+        document.getElementById('campo4').value = contenido.campo4;
+        document.getElementById('campo5').value = contenido.campo5;
+        document.getElementById('campo6').value = contenido.campo6;
+        document.getElementById('campo7').value = contenido.campo7;
+        document.getElementById('campo8').value = contenido.campo8;
+        document.getElementById('campo9').value = contenido.campo9;
+        document.getElementById('campo10').value = contenido.campo10;
+        document.getElementById('campo11').value = contenido.campo11;
+        document.getElementById('campo12').value = contenido.campo12;                                              
+        // Actualiza más campos según sea necesario
+
+        // Mostrar un mensaje de éxito o realizar cualquier otra acción necesaria
+        alert('Progreso cargado correctamente.');
+    } else {
+        alert('No se encontró ningún progreso guardado.');
+    }
+}
+
+
 // Obtener todos los elementos editables
 const editables = document.querySelectorAll('.editor');
 
