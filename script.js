@@ -35,7 +35,7 @@ function guardarProgreso() {
         telefono: document.getElementById('telefono').value,
         extracto: document.getElementById('extracto').value,
         fecha1: document.getElementById('fecha-1').value,
-        contenido1: document.getElementById('contenido-1').value,
+        contenido1: document.getElementById('contenido-1').innerHTML, // Obtener el contenido HTML del div
         fecha2: document.getElementById('fecha-2').value,
         otrosConocimientos: document.getElementById('otros-conocimientos').value,
         referencias: document.getElementById('referencias').value,
@@ -71,7 +71,7 @@ function cargarProgreso() {
         document.getElementById('telefono').value = contenido.telefono;
         document.getElementById('extracto').value = contenido.extracto;
         document.getElementById('fecha-1').value = contenido.fecha1;
-        document.getElementById('contenido-1').value = contenido.contenido1;
+        document.getElementById('contenido-1').innerHTML = contenido.contenido1; // Asignar el contenido HTML al div
         document.getElementById('fecha-2').value = contenido.fecha2;
         document.getElementById('otros-conocimientos').value = contenido.otrosConocimientos;
         document.getElementById('referencias').value = contenido.referencias;
