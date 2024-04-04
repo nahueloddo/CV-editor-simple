@@ -1,4 +1,3 @@
-// Función para verificar campos antes de imprimir y guardar
 function verificarCampos() {
     const textareas = document.querySelectorAll('textarea');
     let camposVacios = false;
@@ -26,16 +25,19 @@ function verificarCampos() {
     }
 }
 
-// Función para guardar como PDF
 function guardarComoPDF() {
     ocultarAlertasYBotones(); // Ocultar alertas y botones antes de guardar como PDF
 
-    // Coloca aquí tu lógica para guardar como PDF
-
+    const advertencia = document.getElementById('advertencia');
+if (camposVacios) {
+    advertencia.classList.remove('hidden');
+} else {
+    advertencia.classList.add('hidden');
+    window.print(); // Imprimir la página
+}
     mostrarAlertasYBotones(); // Mostrar alertas y botones después de guardar como PDF
 }
 
-// Función para ocultar alertas y botones antes de guardar el PDF
 function ocultarAlertasYBotones() {
     ocultarAlertaContenidoGuardado();
     ocultarAlertaProgresoCargado();
@@ -43,12 +45,10 @@ function ocultarAlertasYBotones() {
     ocultarBotonesProgreso();
 }
 
-// Función para mostrar alertas y botones después de guardar el PDF
 function mostrarAlertasYBotones() {
     mostrarBotonesProgreso();
 }
 
-// Función para guardar el progreso
 function guardarProgreso() {
     const contenido = {
         imagenFoto: document.getElementById('imagen-foto').value,
@@ -72,7 +72,6 @@ function guardarProgreso() {
     mostrarAlertaContenidoGuardado();
 }
 
-// Función para cargar el progreso más reciente
 function cargarProgreso() {
     const contenidoJSON = localStorage.getItem('progreso');
 
@@ -99,43 +98,36 @@ function cargarProgreso() {
     }
 }
 
-// Función para mostrar la alerta de contenido guardado exitosamente
 function mostrarAlertaContenidoGuardado() {
     const alerta = document.getElementById('contenidoGuardado');
     alerta.classList.remove('hidden');
 }
 
-// Función para ocultar la alerta de contenido guardado exitosamente
 function ocultarAlertaContenidoGuardado() {
     const alerta = document.getElementById('contenidoGuardado');
     alerta.classList.add('hidden');
 }
 
-// Función para mostrar la alerta de progreso cargado correctamente
 function mostrarAlertaProgresoCargado() {
     const alerta = document.getElementById('progresoCargado');
     alerta.classList.remove('hidden');
 }
 
-// Función para ocultar la alerta de progreso cargado correctamente
 function ocultarAlertaProgresoCargado() {
     const alerta = document.getElementById('progresoCargado');
     alerta.classList.add('hidden');
 }
 
-// Función para mostrar la alerta de progreso no encontrado
 function mostrarAlertaProgresoNoEncontrado() {
     const alerta = document.getElementById('progresoNoEncontrado');
     alerta.classList.remove('hidden');
 }
 
-// Función para ocultar la alerta de progreso no encontrado
 function ocultarAlertaProgresoNoEncontrado() {
     const alerta = document.getElementById('progresoNoEncontrado');
     alerta.classList.add('hidden');
 }
 
-// Función para mostrar botones de progreso
 function mostrarBotonesProgreso() {
     const botones = document.querySelectorAll('.guardarProgreso, .cargarProgreso');
     botones.forEach(boton => {
@@ -143,7 +135,6 @@ function mostrarBotonesProgreso() {
     });
 }
 
-// Función para ocultar botones de progreso
 function ocultarBotonesProgreso() {
     const botones = document.querySelectorAll('.guardarProgreso, .cargarProgreso');
     botones.forEach(boton => {
@@ -151,47 +142,40 @@ function ocultarBotonesProgreso() {
     });
 }
 
-// Obtener todos los elementos editables
 const editables = document.querySelectorAll('.editor');
 
-// Agregar evento focus para cambiar el color del texto cuando el usuario está escribiendo
 editables.forEach(editable => {
     editable.addEventListener('focus', () => {
-        editable.style.color = '#111'; // Cambiar el color del texto cuando se enfoca
+        editable.style.color = '#111';
     });
 
-    // Agregar evento blur para restaurar el color del placeholder si el contenido está vacío
     editable.addEventListener('blur', () => {
         if (editable.textContent.trim() === '') {
-            editable.style.color = 'gray'; // Restaurar el color del placeholder si el contenido está vacío
+            editable.style.color = 'gray';
         }
     });
 
-    // Agregar evento input para detectar cambios en el contenido y mantener el color del texto
     editable.addEventListener('input', () => {
         if (editable.textContent.trim() !== '') {
-            editable.style.color = '#111'; // Mantener el color del texto si hay contenido
+            editable.style.color = '#111';
         }
     });
 });
 
-// Para .editor
 const editorDiv = document.querySelector('.editor');
 editorDiv.addEventListener("input", e => {
-    editorDiv.style.height = '50px'; // Establecer una altura mínima
-    editorDiv.style.height = (editorDiv.scrollHeight + 2) + 'px'; // Ajustar la altura según el contenido
+    editorDiv.style.height = '50px';
+    editorDiv.style.height = (editorDiv.scrollHeight + 2) + 'px';
 
-    // Aplicar el max-height
-    const maxHeight = 150; // Establecer la altura máxima deseada
+    const maxHeight = 150;
     if (editorDiv.scrollHeight > maxHeight) {
-        editorDiv.style.overflowY = 'scroll'; // Hacer que el contenido sea desplazable verticalmente si excede la altura máxima
-        editorDiv.style.height = maxHeight + 'px'; // Establecer la altura máxima
+        editorDiv.style.overflowY = 'scroll';
+        editorDiv.style.height = maxHeight + 'px';
     } else {
-        editorDiv.style.overflowY = 'hidden'; // Ocultar la barra de desplazamiento si el contenido no excede la altura máxima
+        editorDiv.style.overflowY = 'hidden';
     }
 });
 
-// Para textareas de "Fecha"
 const textareas = document.querySelectorAll('textarea[placeholder="Fecha"]');
 
 textareas.forEach(textarea => {
@@ -201,43 +185,34 @@ textareas.forEach(textarea => {
     });
 });
 
-// Para .editor-mini
 const editorMiniDiv = document.querySelector('.editor-mini');
 editorMiniDiv.addEventListener("input", e => {
-    editorMiniDiv.style.height = '50px'; // Establecer una altura mínima
-    editorMiniDiv.style.height = (editorMiniDiv.scrollHeight + 2) + 'px'; // Ajustar la altura según el contenido
+    editorMiniDiv.style.height = '50px';
+    editorMiniDiv.style.height = (editorMiniDiv.scrollHeight + 2) + 'px';
 
-    // Aplicar el max-height
-    const maxHeight = 120; // Establecer la altura máxima deseada
+    const maxHeight = 120;
     if (editorMiniDiv.scrollHeight > maxHeight) {
-        editorMiniDiv.style.overflowY = 'scroll'; // Hacer que el contenido sea desplazable verticalmente si excede la altura máxima
-        editorMiniDiv.style.height = maxHeight + 'px'; // Establecer la altura máxima
+        editorMiniDiv.style.overflowY = 'scroll';
+        editorMiniDiv.style.height = maxHeight + 'px';
     } else {
-        editorMiniDiv.style.overflowY = 'hidden'; // Ocultar la barra de desplazamiento si el contenido no excede la altura máxima
+        editorMiniDiv.style.overflowY = 'hidden';
     }
 });
-        
+
 function agregarFechaContenido(boton) {
     const contenedor = boton.parentElement;
     const nuevoContenido = contenedor.cloneNode(true);
-    
-    // Vaciar el contenido clonado
-    const editorClonado = nuevoContenido.querySelector('.editor');
-    editorClonado.innerHTML = ''; // Vaciar el contenido
 
-    // Agregar el placeholder al editor clonado
+    const editorClonado = nuevoContenido.querySelector('.editor');
+    editorClonado.innerHTML = '';
+
     const placeholder = document.createElement('span');
     placeholder.classList.add('placeholder');
     placeholder.textContent = 'Escribe aquí...';
     editorClonado.appendChild(placeholder);
 
-    // Insertar el bloque clonado en el DOM
     contenedor.parentNode.insertBefore(nuevoContenido, contenedor.nextSibling);
 
-    // Inicializar CKEditor en el bloque clonado
-    CKEDITOR.inline(editorClonado);
-
-    // Mostrar el botón de eliminar
     const botonEliminar = nuevoContenido.querySelector('.boton-eliminar');
     botonEliminar.classList.remove('invisible');
 }
@@ -246,7 +221,6 @@ function eliminarFechaContenido(boton) {
     const contenedor = boton.parentElement;
     contenedor.remove();
 
-    // Oculta el botón de eliminar solo si no hay más elementos en el contenedor
     if (contenedor.parentNode.children.length === 1) {
         const botonEliminar = contenedor.querySelector('.boton-eliminar');
         botonEliminar.classList.add('invisible');
@@ -282,7 +256,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // Inicialmente, si el editor está vacío, mostramos el placeholder
         if (editor.textContent === '') {
             editor.textContent = placeholder.textContent;
             editor.classList.add('empty');
@@ -290,7 +263,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Inicializa CKEditor para cada div con clase "editor"
 CKEDITOR.replace('extracto .editor');
 CKEDITOR.replace('trayectoria-laboral .editor');
 CKEDITOR.replace('formacion-educativa .editor');
