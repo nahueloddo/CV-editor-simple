@@ -28,18 +28,18 @@
 function guardarProgreso() {
     // Obtener el contenido de los campos y elementos que deseas guardar
     const contenido = {
-        campo1: document.getElementById('imagen-foto').value,
-        campo2: document.getElementById('fecha-nacimiento').value,
-        campo3: document.getElementById('ubicacion').value,
-        campo4: document.getElementById('email').value,
-        campo5: document.getElementById('telefono').value,
-        campo6: document.getElementById('extracto').value,
-        campo7: document.getElementById('fecha-1').value,
-        campo8: document.getElementById('contenido-1').value,
-        campo9: document.getElementById('fecha-2').value,
-        campo10: document.getElementById('otros-conocimientos').value,
-        campo11: document.getElementById('referencias').value,
-        campo12: document.getElementById('remuneracion-pretendida').value,                                                     
+        imagenFoto: document.getElementById('imagen-foto').value,
+        fechaNacimiento: document.getElementById('fecha-nacimiento').value,
+        ubicacion: document.getElementById('ubicacion').value,
+        email: document.getElementById('email').value,
+        telefono: document.getElementById('telefono').value,
+        extracto: document.getElementById('extracto').value,
+        fecha1: document.getElementById('fecha-1').value,
+        contenido1: document.getElementById('contenido-1').value,
+        fecha2: document.getElementById('fecha-2').value,
+        otrosConocimientos: document.getElementById('otros-conocimientos').value,
+        referencias: document.getElementById('referencias').value,
+        remuneracionPretendida: document.getElementById('remuneracion-pretendida').value
         // Agregar más campos según sea necesario
     };
 
@@ -49,8 +49,8 @@ function guardarProgreso() {
     // Guardar el contenido en el almacenamiento local del navegador
     localStorage.setItem('progreso', contenidoJSON);
 
-    // Mostrar un mensaje de éxito o realizar cualquier otra acción necesaria
-    alert('Progreso guardado correctamente.');
+    // Mostrar la alerta de contenido guardado exitosamente
+    mostrarAlertaContenidoGuardado();
 }
 
 // Función para cargar el progreso más reciente
@@ -64,27 +64,63 @@ function cargarProgreso() {
         const contenido = JSON.parse(contenidoJSON);
 
         // Actualizar los campos y elementos con el contenido guardado
-        document.getElementById('campo1').value = contenido.campo1;
-        document.getElementById('campo2').value = contenido.campo2;
-        document.getElementById('campo3').value = contenido.campo3;
-        document.getElementById('campo4').value = contenido.campo4;
-        document.getElementById('campo5').value = contenido.campo5;
-        document.getElementById('campo6').value = contenido.campo6;
-        document.getElementById('campo7').value = contenido.campo7;
-        document.getElementById('campo8').value = contenido.campo8;
-        document.getElementById('campo9').value = contenido.campo9;
-        document.getElementById('campo10').value = contenido.campo10;
-        document.getElementById('campo11').value = contenido.campo11;
-        document.getElementById('campo12').value = contenido.campo12;                                              
+        document.getElementById('imagen-foto').value = contenido.imagenFoto;
+        document.getElementById('fecha-nacimiento').value = contenido.fechaNacimiento;
+        document.getElementById('ubicacion').value = contenido.ubicacion;
+        document.getElementById('email').value = contenido.email;
+        document.getElementById('telefono').value = contenido.telefono;
+        document.getElementById('extracto').value = contenido.extracto;
+        document.getElementById('fecha-1').value = contenido.fecha1;
+        document.getElementById('contenido-1').value = contenido.contenido1;
+        document.getElementById('fecha-2').value = contenido.fecha2;
+        document.getElementById('otros-conocimientos').value = contenido.otrosConocimientos;
+        document.getElementById('referencias').value = contenido.referencias;
+        document.getElementById('remuneracion-pretendida').value = contenido.remuneracionPretendida;
         // Actualiza más campos según sea necesario
 
-        // Mostrar un mensaje de éxito o realizar cualquier otra acción necesaria
-        alert('Progreso cargado correctamente.');
+        // Mostrar la alerta de progreso cargado correctamente
+        mostrarAlertaProgresoCargado();
     } else {
-        alert('No se encontró ningún progreso guardado.');
+        // Mostrar la alerta de progreso no encontrado
+        mostrarAlertaProgresoNoEncontrado();
     }
 }
 
+// Función para mostrar la alerta de contenido guardado exitosamente
+function mostrarAlertaContenidoGuardado() {
+    const alerta = document.getElementById('contenidoGuardado');
+    alerta.classList.remove('hidden');
+}
+
+// Función para ocultar la alerta de contenido guardado exitosamente
+function ocultarAlertaContenidoGuardado() {
+    const alerta = document.getElementById('contenidoGuardado');
+    alerta.classList.add('hidden');
+}
+
+// Función para mostrar la alerta de progreso cargado correctamente
+function mostrarAlertaProgresoCargado() {
+    const alerta = document.getElementById('progresoCargado');
+    alerta.classList.remove('hidden');
+}
+
+// Función para ocultar la alerta de progreso cargado correctamente
+function ocultarAlertaProgresoCargado() {
+    const alerta = document.getElementById('progresoCargado');
+    alerta.classList.add('hidden');
+}
+
+// Función para mostrar la alerta de progreso no encontrado
+function mostrarAlertaProgresoNoEncontrado() {
+    const alerta = document.getElementById('progresoNoEncontrado');
+    alerta.classList.remove('hidden');
+}
+
+// Función para ocultar la alerta de progreso no encontrado
+function ocultarAlertaProgresoNoEncontrado() {
+    const alerta = document.getElementById('progresoNoEncontrado');
+    alerta.classList.add('hidden');
+}
 
 // Obtener todos los elementos editables
 const editables = document.querySelectorAll('.editor');
