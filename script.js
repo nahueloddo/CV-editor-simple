@@ -111,6 +111,31 @@ function ocultarAlertaProgresoNoEncontrado() {
     alerta.classList.add('hidden');
 }
 
+// Función para ocultar alertas y botones antes de guardar el PDF
+function ocultarAlertasYBotones() {
+    ocultarAlertaContenidoGuardado();
+    ocultarAlertaProgresoCargado();
+    ocultarAlertaProgresoNoEncontrado();
+    ocultarBotonesProgreso();
+}
+
+// Función para mostrar botones de progreso
+function mostrarBotonesProgreso() {
+    const botones = document.querySelectorAll('.guardarProgreso, .cargarProgreso');
+    botones.forEach(boton => {
+        boton.classList.remove('hidden');
+    });
+}
+
+// Función para ocultar botones de progreso
+function ocultarBotonesProgreso() {
+    const botones = document.querySelectorAll('.guardarProgreso, .cargarProgreso');
+    botones.forEach(boton => {
+        boton.classList.add('hidden');
+    });
+}
+
+
 // Obtener todos los elementos editables
 const editables = document.querySelectorAll('.editor');
 
