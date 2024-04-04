@@ -144,27 +144,7 @@ function ocultarBotonesProgreso() {
 
 
 // Obtener todos los elementos editables
-const editables = document.querySelectorAll('.editor, textarea');
-
-// Agregar evento input para ocultar advertencias y alertas al editar contenido
-editables.forEach(editable => {
-    editable.addEventListener('input', () => {
-        ocultarAdvertenciasYAlertas();
-    });
-});
-
-// Función para ocultar todas las advertencias y alertas
-function ocultarAdvertenciasYAlertas() {
-    const advertencias = document.querySelectorAll('.advertencia');
-    advertencias.forEach(advertencia => {
-        advertencia.classList.add('hidden');
-    });
-
-    const alertas = document.querySelectorAll('.alerta');
-    alertas.forEach(alerta => {
-        alerta.classList.add('hidden');
-    });
-}
+const editables = document.querySelectorAll('.editor');
 
 // Agregar evento focus para cambiar el color del texto cuando el usuario está escribiendo
 editables.forEach(editable => {
