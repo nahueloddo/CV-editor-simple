@@ -1,4 +1,5 @@
-    function verificarCampos() {
+// Función para verificar campos antes de imprimir y guardar
+function verificarCampos() {
     const textareas = document.querySelectorAll('textarea');
     let camposVacios = false;
 
@@ -21,9 +22,32 @@
         advertencia.classList.remove('hidden');
     } else {
         advertencia.classList.add('hidden');
-        window.print(); // Imprimir la página
+        guardarComoPDF(); // Llamar a la función para guardar como PDF
     }
 }
+
+// Función para guardar como PDF
+function guardarComoPDF() {
+    ocultarAlertasYBotones(); // Ocultar alertas y botones antes de guardar como PDF
+
+    // Coloca aquí tu lógica para guardar como PDF
+
+    mostrarAlertasYBotones(); // Mostrar alertas y botones después de guardar como PDF
+}
+
+// Función para ocultar alertas y botones antes de guardar el PDF
+function ocultarAlertasYBotones() {
+    ocultarAlertaContenidoGuardado();
+    ocultarAlertaProgresoCargado();
+    ocultarAlertaProgresoNoEncontrado();
+    ocultarBotonesProgreso();
+}
+
+// Función para mostrar alertas y botones después de guardar el PDF
+function mostrarAlertasYBotones() {
+    mostrarBotonesProgreso();
+}
+
 // Función para guardar el progreso
 function guardarProgreso() {
     const contenido = {
@@ -111,14 +135,6 @@ function ocultarAlertaProgresoNoEncontrado() {
     alerta.classList.add('hidden');
 }
 
-// Función para ocultar alertas y botones antes de guardar el PDF
-function ocultarAlertasYBotones() {
-    ocultarAlertaContenidoGuardado();
-    ocultarAlertaProgresoCargado();
-    ocultarAlertaProgresoNoEncontrado();
-    ocultarBotonesProgreso();
-}
-
 // Función para mostrar botones de progreso
 function mostrarBotonesProgreso() {
     const botones = document.querySelectorAll('.guardarProgreso, .cargarProgreso');
@@ -134,7 +150,6 @@ function ocultarBotonesProgreso() {
         boton.classList.add('hidden');
     });
 }
-
 
 // Obtener todos los elementos editables
 const editables = document.querySelectorAll('.editor');
@@ -159,6 +174,7 @@ editables.forEach(editable => {
         }
     });
 });
+
 // Para .editor
 const editorDiv = document.querySelector('.editor');
 editorDiv.addEventListener("input", e => {
@@ -237,46 +253,47 @@ function eliminarFechaContenido(boton) {
     }
 }
 
-        function mostrarFoto(input) {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                const foto = document.getElementById('imagen-foto');
-                foto.src = e.target.result;
+function mostrarFoto(input) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        const foto = document.getElementById('imagen-foto');
+        foto.src = e.target.result;
+    }
+    reader.readAsDataURL(input.files[0]);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    var editors = document.querySelectorAll('.editor');
+
+    editors.forEach(function(editor) {
+        var placeholder = editor.querySelector('.placeholder');
+
+        editor.addEventListener('focus', function() {
+            if (editor.textContent === placeholder.textContent) {
+                editor.textContent = '';
+                editor.classList.remove('empty');
             }
-            reader.readAsDataURL(input.files[0]);
-        }
-        document.addEventListener('DOMContentLoaded', function() {
-            var editors = document.querySelectorAll('.editor');
-
-            editors.forEach(function(editor) {
-                var placeholder = editor.querySelector('.placeholder');
-
-                editor.addEventListener('focus', function() {
-                    if (editor.textContent === placeholder.textContent) {
-                        editor.textContent = '';
-                        editor.classList.remove('empty');
-                    }
-                });
-
-                editor.addEventListener('blur', function() {
-                    if (editor.textContent === '') {
-                        editor.textContent = placeholder.textContent;
-                        editor.classList.add('empty');
-                    }
-                });
-
-                // Inicialmente, si el editor está vacío, mostramos el placeholder
-                if (editor.textContent === '') {
-                    editor.textContent = placeholder.textContent;
-                    editor.classList.add('empty');
-                }
-            });
         });
 
-        // Inicializa CKEditor para cada div con clase "editor"
-        CKEDITOR.replace('extracto .editor');
-        CKEDITOR.replace('trayectoria-laboral .editor');
-        CKEDITOR.replace('formacion-educativa .editor');
-        CKEDITOR.replace('otros-conocimientos .editor');
-        CKEDITOR.replace('referencias .editor');
-        CKEDITOR.replace('remuneracion-pretendida .editor');
+        editor.addEventListener('blur', function() {
+            if (editor.textContent === '') {
+                editor.textContent = placeholder.textContent;
+                editor.classList.add('empty');
+            }
+        });
+
+        // Inicialmente, si el editor está vacío, mostramos el placeholder
+        if (editor.textContent === '') {
+            editor.textContent = placeholder.textContent;
+            editor.classList.add('empty');
+        }
+    });
+});
+
+// Inicializa CKEditor para cada div con clase "editor"
+CKEDITOR.replace('extracto .editor');
+CKEDITOR.replace('trayectoria-laboral .editor');
+CKEDITOR.replace('formacion-educativa .editor');
+CKEDITOR.replace('otros-conocimientos .editor');
+CKEDITOR.replace('referencias .editor');
+CKEDITOR.replace('remuneracion-pretendida .editor');
