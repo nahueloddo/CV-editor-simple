@@ -26,7 +26,6 @@
 }
 // Función para guardar el progreso
 function guardarProgreso() {
-    // Obtener el contenido de los campos y elementos que deseas guardar
     const contenido = {
         imagenFoto: document.getElementById('imagen-foto').value,
         fechaNacimiento: document.getElementById('fecha-nacimiento').value,
@@ -35,36 +34,27 @@ function guardarProgreso() {
         telefono: document.getElementById('telefono').value,
         extracto: document.getElementById('extracto').innerHTML,
         fecha1: document.getElementById('fecha-1').value,
-        contenido1: document.getElementById('contenido-1').innerHTML, // Obtener el contenido HTML del div
+        contenido1: document.getElementById('contenido-1').innerHTML,
         fecha2: document.getElementById('fecha-2').value,
-        contenido2: document.getElementById('contenido-2').innerHTML, // Obtener el contenido HTML del div        
+        contenido2: document.getElementById('contenido-2').innerHTML,
         otrosConocimientos: document.getElementById('otros-conocimientos').innerHTML,
         referencias: document.getElementById('referencias').innerHTML,
         remuneracionPretendida: document.getElementById('remuneracion-pretendida').innerHTML
-        // Agregar más campos según sea necesario
     };
 
-    // Convertir el contenido a cadena JSON
     const contenidoJSON = JSON.stringify(contenido);
-
-    // Guardar el contenido en el almacenamiento local del navegador
     localStorage.setItem('progreso', contenidoJSON);
 
-    // Mostrar la alerta de contenido guardado exitosamente
     mostrarAlertaContenidoGuardado();
 }
 
 // Función para cargar el progreso más reciente
 function cargarProgreso() {
-    // Obtener el contenido guardado del almacenamiento local
     const contenidoJSON = localStorage.getItem('progreso');
 
-    // Verificar si hay contenido guardado
     if (contenidoJSON) {
-        // Convertir la cadena JSON a objeto JavaScript
         const contenido = JSON.parse(contenidoJSON);
 
-        // Actualizar los campos y elementos con el contenido guardado
         document.getElementById('imagen-foto').value = contenido.imagenFoto;
         document.getElementById('fecha-nacimiento').value = contenido.fechaNacimiento;
         document.getElementById('ubicacion').value = contenido.ubicacion;
@@ -72,15 +62,16 @@ function cargarProgreso() {
         document.getElementById('telefono').value = contenido.telefono;
         document.getElementById('extracto').innerHTML = contenido.extracto;
         document.getElementById('fecha-1').value = contenido.fecha1;
-        document.getElementById('contenido-1').innerHTML = contenido.contenido1; // Asignar el contenido HTML al div
+        document.getElementById('contenido-1').innerHTML = contenido.contenido1;
         document.getElementById('fecha-2').value = contenido.fecha2;
-        document.getElementById('contenido-2').innerHTML = contenido.contenido2; // Asignar el contenido HTML al div        
+        document.getElementById('contenido-2').innerHTML = contenido.contenido2;
         document.getElementById('otros-conocimientos').innerHTML = contenido.otrosConocimientos;
         document.getElementById('referencias').innerHTML = contenido.referencias;
         document.getElementById('remuneracion-pretendida').innerHTML = contenido.remuneracionPretendida;
-        // Actualiza más campos según sea necesario
 
-
+        mostrarAlertaProgresoCargado();
+    } else {
+        mostrarAlertaProgresoNoEncontrado();
     }
 }
 
