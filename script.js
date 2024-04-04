@@ -167,25 +167,6 @@ editables.forEach(editable => {
     });
 });
 
-// Agregar evento input para ocultar advertencias y alertas al editar contenido
-editables.forEach(editable => {
-    editable.addEventListener('input', () => {
-        ocultarAdvertenciasYAlertas();
-    });
-});
-
-// Función para ocultar todas las advertencias y alertas
-function ocultarAdvertenciasYAlertas() {
-    const advertencias = document.querySelectorAll('.advertencia');
-    advertencias.forEach(advertencia => {
-        advertencia.classList.add('hidden');
-    });
-
-    const alertas = document.querySelectorAll('.alerta');
-    alertas.forEach(alerta => {
-        alerta.classList.add('hidden');
-    });
-}
 // Para .editor
 const editorDiv = document.querySelector('.editor');
 editorDiv.addEventListener("input", e => {
