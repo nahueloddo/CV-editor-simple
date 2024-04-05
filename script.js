@@ -102,7 +102,7 @@ function mostrarAlertaContenidoGuardado() {
 // Función para ocultar la alerta de contenido guardado exitosamente
 function ocultarAlertaContenidoGuardado() {
     const alerta = document.getElementById('contenidoGuardado');
-    alerta.classList.add('hidden');
+    
     // Ocultar la alerta después de un tiempo
     setTimeout(function() {
         alerta.classList.add('hidden');
@@ -118,7 +118,7 @@ function mostrarAlertaProgresoCargado() {
 // Función para ocultar la alerta de progreso cargado correctamente
 function ocultarAlertaProgresoCargado() {
     const alerta = document.getElementById('progresoCargado');
-    alerta.classList.add('hidden');
+
     // Ocultar la alerta después de un tiempo
     setTimeout(function() {
         alerta.classList.add('hidden');
@@ -134,7 +134,7 @@ function mostrarAlertaProgresoNoEncontrado() {
 // Función para ocultar la alerta de progreso no encontrado
 function ocultarAlertaProgresoNoEncontrado() {
     const alerta = document.getElementById('progresoNoEncontrado');
-    alerta.classList.add('hidden');
+
     // Ocultar la alerta después de un tiempo
     setTimeout(function() {
         alerta.classList.add('hidden');
