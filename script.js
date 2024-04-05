@@ -142,6 +142,24 @@ function ocultarBotonesProgreso() {
     });
 }
 
+function eliminarContenido() {
+    // Obtener todos los elementos que se desea borrar
+    const elementos = document.querySelectorAll('div[contenteditable], textarea');
+
+    // Iterar sobre los elementos y borrar su contenido
+    elementos.forEach(elemento => {
+        elemento.textContent = '';
+    });
+
+    // Mostrar la alerta de contenido eliminado
+    const alerta = document.getElementById('contenidoEliminado');
+    alerta.classList.remove('hidden');
+
+    // Ocultar la alerta después de un tiempo
+    setTimeout(function () {
+        alerta.classList.add('hidden');
+    }, 3000); // Ocultar después de 3 segundos (3000 milisegundos)
+}
 
 // Obtener todos los elementos editables
 const editables = document.querySelectorAll('.editor');

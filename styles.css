@@ -218,6 +218,7 @@ textarea::placeholder { /* Modern browsers */
     }
     .guardarProgreso,
     .cargarProgreso,
+    #eliminarContenido,    
     #contenidoGuardado,
     #progresoCargado,
     #progresoNoEncontrado,
