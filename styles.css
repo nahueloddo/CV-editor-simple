@@ -268,8 +268,11 @@ textarea::placeholder { /* Modern browsers */
     }
     .fa {
         display: inline-block;
-        margin-right: 10px;
+        margin-right: 20px;
     }
+    .fa-margen {
+        margin-right: 22px;
+    }    
     .font-semibold {
         font-weight: bold;
     }
