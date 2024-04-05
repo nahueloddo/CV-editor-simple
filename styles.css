@@ -76,6 +76,7 @@
 .guardarPDF, .guardarProgreso, .cargarProgreso {
     margin: auto;
 	width: 100%;
+    margin-bottom: 10px;
 }
 
 .editor {
@@ -204,6 +205,7 @@ textarea::placeholder { /* Modern browsers */
     }
     .guardarPDF, .guardarProgreso, .cargarProgreso {
         margin-left: 80%!important;
+        margin-bottom: 10px;
 		width: auto;
     }
 }
