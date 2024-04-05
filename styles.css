@@ -82,7 +82,6 @@
 .editor {
     height: 50px;
     font-family: 'Poppins', sans-serif;
-    resize: vertical;
 }
 .none::-webkit-resizer  {
     display: none;
@@ -163,6 +162,7 @@ textarea::placeholder { /* Modern browsers */
 	.editor {
 		max-width:100%;
 		overflow:hidden;
+        resize: vertical;        
 	}
 
 	.editor-mini {
