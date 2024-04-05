@@ -109,7 +109,6 @@ function ocultarAlertaContenidoGuardado() {
     }, 3000); // Ocultar después de 3 segundos (3000 milisegundos)
 }
 
-
 // Función para mostrar la alerta de progreso cargado correctamente
 function mostrarAlertaProgresoCargado() {
     const alerta = document.getElementById('progresoCargado');
