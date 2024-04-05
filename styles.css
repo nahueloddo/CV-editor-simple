@@ -73,7 +73,7 @@
     z-index: 1;
 }
 
-.guardarPDF {
+.guardarPDF, .guardarProgreso, .cargarProgreso {
     margin: auto;
 	width: 100%;
 }
@@ -103,19 +103,6 @@ textarea::placeholder { /* Modern browsers */
 .editor-mini{
 	max-width:66.6666%;
 	overflow:hidden;
-}
-.botones-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-top: 20px; /* Ajusta el margen superior según sea necesario */
-}
-
-.alerta,
-button {
-    margin-bottom: 10px; /* Espaciado entre elementos */
 }
 
 @media (max-width: 640px) {
@@ -182,7 +169,7 @@ button {
     #hoja-a4 {
         width: 80%; /* Ancho del 80% del contenedor padre */
     }
-    .guardarPDF {
+    .guardarPDF, .guardarProgreso, .cargarProgreso {
         margin-left: 0!important;
 		width: auto;		
     }
@@ -193,7 +180,7 @@ button {
     #hoja-a4 {
         width: 70%; /* Ancho del 70% del contenedor padre */
     }
-    .guardarPDF {
+    .guardarPDF, .guardarProgreso, .cargarProgreso {
         margin-left: 70%!important;
 		width: auto;		
     }
@@ -215,7 +202,7 @@ button {
     #hoja-a4 {
         width: 60%; /* Ancho del 60% del contenedor padre */
     }
-    .guardarPDF {
+    .guardarPDF, .guardarProgreso, .cargarProgreso {
         margin-left: 80%!important;
 		width: auto;
     }
