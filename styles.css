@@ -268,7 +268,7 @@ textarea::placeholder { /* Modern browsers */
     }
     .fa {
         display: inline-block;
-        margin-right: 5px;
+        margin-right: 10px;
     }
     .font-semibold {
         font-weight: bold;
