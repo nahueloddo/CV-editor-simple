@@ -245,7 +245,7 @@ textarea::placeholder { /* Modern browsers */
     }
     .single-line {
         white-space: nowrap;
-        margin-right: 88px;
+        margin-right: 89px;
     }    
     .flex {
         display: flex;
