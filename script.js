@@ -64,6 +64,11 @@ function guardarProgreso() {
     localStorage.setItem('progreso', contenidoJSON);
 
     mostrarAlertaContenidoGuardado();
+
+    // Ocultar la alerta después de un tiempo
+    setTimeout(function() {
+        ocultarAlertaContenidoGuardado();
+    }, 3000); // Ocultar después de 3 segundos (3000 milisegundos)
 }
 
 // Función para cargar el progreso más reciente
