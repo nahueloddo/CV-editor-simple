@@ -143,10 +143,12 @@ function ocultarBotonesProgreso() {
 }
 
 function eliminarContenido() {
-    // Obtener todos los elementos que se desea borrar
-    const elementos = document.querySelectorAll('div[contenteditable], textarea');
-
-
+    // Obtener todos los elementos editables
+    const editables = document.querySelectorAll('.editor');
+    
+    // Obtener todos los elementos textarea
+    const textareas = document.querySelectorAll('textarea');
+    
     // Iterar sobre cada elemento editable
     editables.forEach(editable => {
         // Reemplazar el contenido con el marcador de posición
@@ -155,6 +157,11 @@ function eliminarContenido() {
         placeholder.textContent = 'Escribe aquí...';
         editable.innerHTML = ''; // Limpiar contenido existente
         editable.appendChild(placeholder); // Agregar marcador de posición
+    });
+
+    // Iterar sobre cada textarea y borrar su contenido
+    textareas.forEach(textarea => {
+        textarea.value = ''; // Borrar contenido
     });
 
     // Mostrar alerta de contenido eliminado
