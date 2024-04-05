@@ -103,12 +103,12 @@ function mostrarAlertaContenidoGuardado() {
 function ocultarAlertaContenidoGuardado() {
     const alerta = document.getElementById('contenidoGuardado');
     alerta.classList.add('hidden');
-
-    // Ocultar la alerta después de 3 segundos
-    setTimeout(function () {
+    // Ocultar la alerta después de un tiempo
+    setTimeout(function() {
         alerta.classList.add('hidden');
-    }, 3000); // 3 segundos
+    }, 3000); // Ocultar después de 3 segundos (3000 milisegundos)
 }
+
 
 // Función para mostrar la alerta de progreso cargado correctamente
 function mostrarAlertaProgresoCargado() {
@@ -120,11 +120,10 @@ function mostrarAlertaProgresoCargado() {
 function ocultarAlertaProgresoCargado() {
     const alerta = document.getElementById('progresoCargado');
     alerta.classList.add('hidden');
-
-    // Ocultar la alerta después de 3 segundos
-    setTimeout(function () {
+    // Ocultar la alerta después de un tiempo
+    setTimeout(function() {
         alerta.classList.add('hidden');
-    }, 3000); // 3 segundos
+    }, 3000); // Ocultar después de 3 segundos (3000 milisegundos)
 }
 
 // Función para mostrar la alerta de progreso no encontrado
@@ -137,11 +136,10 @@ function mostrarAlertaProgresoNoEncontrado() {
 function ocultarAlertaProgresoNoEncontrado() {
     const alerta = document.getElementById('progresoNoEncontrado');
     alerta.classList.add('hidden');
-
-    // Ocultar la alerta después de 3 segundos
-    setTimeout(function () {
+    // Ocultar la alerta después de un tiempo
+    setTimeout(function() {
         alerta.classList.add('hidden');
-    }, 3000); // 3 segundos
+    }, 3000); // Ocultar después de 3 segundos (3000 milisegundos)
 }
 
 // Función para mostrar botones de progreso
