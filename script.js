@@ -101,7 +101,7 @@ function mostrarAlertaContenidoGuardado() {
 
     // Ocultar la alerta después de un tiempo
     setTimeout(function() {
-        alerta.classList.add('hidden');
+        ocultarAlertaContenidoGuardado();
     }, 3000); // Ocultar después de 3 segundos (3000 milisegundos)
 }
 
