@@ -22,7 +22,7 @@ function verificarCampos() {
         advertencia.classList.remove('hidden');
         setTimeout(function () {
             advertencia.classList.add('hidden');
-        }, 3000);        
+        }, 3000);
     } else {
         advertencia.classList.add('hidden');
         window.print(); // Imprimir la página
@@ -100,7 +100,7 @@ function mostrarAlertaContenidoGuardado() {
 
 
     // Ocultar la alerta después de un tiempo
-    setTimeout(function() {
+    setTimeout(function () {
         alerta.classList.add('hidden');
     }, 3000); // Ocultar después de 3 segundos (3000 milisegundos)
 }
@@ -109,9 +109,9 @@ function mostrarAlertaContenidoGuardado() {
 function mostrarAlertaProgresoCargado() {
     const alerta = document.getElementById('progresoCargado');
     alerta.classList.remove('hidden');
-    
+
     // Ocultar la alerta después de un tiempo
-    setTimeout(function() {
+    setTimeout(function () {
         alerta.classList.add('hidden');
     }, 3000); // Ocultar después de 3 segundos (3000 milisegundos)
 }
@@ -120,9 +120,9 @@ function mostrarAlertaProgresoCargado() {
 function mostrarAlertaProgresoNoEncontrado() {
     const alerta = document.getElementById('progresoNoEncontrado');
     alerta.classList.remove('hidden');
-    
+
     // Ocultar la alerta después de un tiempo
-    setTimeout(function() {
+    setTimeout(function () {
         alerta.classList.add('hidden');
     }, 3000); // Ocultar después de 3 segundos (3000 milisegundos)
 }
@@ -216,7 +216,7 @@ editorDiv.addEventListener("input", e => {
 });
 
 // Para textareas de "Fecha"
-const textareas = document.querySelectorAll('textarea[placeholder="Fecha"]');
+const textareas = document.querySelectorAll('textarea[placeholder="Fecha (Ej: Marzo, 2020 - Agosto, 2023)"]');
 
 textareas.forEach(textarea => {
     textarea.addEventListener("input", e => {
