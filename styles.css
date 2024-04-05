@@ -105,7 +105,10 @@ textarea::placeholder { /* Modern browsers */
 	max-width:66.6666%;
 	overflow:hidden;
 }
-
+.alerta {
+    position: relative;
+    z-index: 1000;
+}    
 @media (max-width: 640px) {
     #encabezado {
         flex-direction: column; /* Cambia la dirección del flex para que los elementos se apilen verticalmente */
