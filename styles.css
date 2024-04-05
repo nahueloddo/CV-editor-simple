@@ -84,7 +84,7 @@
     font-family: 'Poppins', sans-serif;
     resize: vertical;
 }
-.none::-webkit-resizer,.editor::-webkit-resizer  {
+.none::-webkit-resizer  {
     display: none;
 }
 .cke_editable, .placeholder, .empty{
