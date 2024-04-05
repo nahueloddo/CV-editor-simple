@@ -220,6 +220,7 @@ textarea::placeholder { /* Modern browsers */
         width: 210mm; /* Ancho de una hoja A4 */
         height: 297mm; /* Altura de una hoja A4 */
     }
+    .none::-webkit-resizer,
     .guardarProgreso,
     .cargarProgreso,
     #eliminarContenido,    
