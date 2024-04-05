@@ -59,6 +59,17 @@ function guardarProgreso() {
         referencias: document.getElementById('referencias').innerHTML,
         remuneracionPretendida: document.getElementById('remuneracion-pretendida').innerHTML
     };
+    // Obtener el contenido de los textareas clonados
+    const textareasClonados = document.querySelectorAll('textarea');
+    textareasClonados.forEach((textarea, index) => {
+        contenido[`fecha${index + 3}`] = textarea.value;
+    });
+
+    // Obtener el contenido de los div con clase 'editor' clonados
+    const editoresClonados = document.querySelectorAll('.editor');
+    editoresClonados.forEach((editor, index) => {
+        contenido[`contenido${index + 3}`] = editor.innerHTML;
+    });
 
     const contenidoJSON = JSON.stringify(contenido);
     localStorage.setItem('progreso', contenidoJSON);

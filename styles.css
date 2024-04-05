@@ -82,8 +82,9 @@
 .editor {
     height: 50px;
     font-family: 'Poppins', sans-serif;
+    resize: vertical;
 }
-.none::-webkit-resizer {
+.none::-webkit-resizer,.editor::-webkit-resizer  {
     display: none;
 }
 .cke_editable, .placeholder, .empty{
