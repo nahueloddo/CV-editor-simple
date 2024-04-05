@@ -20,6 +20,9 @@ function verificarCampos() {
     const advertencia = document.getElementById('advertencia');
     if (camposVacios) {
         advertencia.classList.remove('hidden');
+        setTimeout(function () {
+            advertencia.classList.add('hidden');
+        }, 3000);        
     } else {
         advertencia.classList.add('hidden');
         window.print(); // Imprimir la página
@@ -100,6 +103,11 @@ function mostrarAlertaContenidoGuardado() {
 function ocultarAlertaContenidoGuardado() {
     const alerta = document.getElementById('contenidoGuardado');
     alerta.classList.add('hidden');
+
+    // Ocultar la alerta después de 3 segundos
+    setTimeout(function () {
+        alerta.classList.add('hidden');
+    }, 3000); // 3 segundos
 }
 
 // Función para mostrar la alerta de progreso cargado correctamente
@@ -112,6 +120,11 @@ function mostrarAlertaProgresoCargado() {
 function ocultarAlertaProgresoCargado() {
     const alerta = document.getElementById('progresoCargado');
     alerta.classList.add('hidden');
+
+    // Ocultar la alerta después de 3 segundos
+    setTimeout(function () {
+        alerta.classList.add('hidden');
+    }, 3000); // 3 segundos
 }
 
 // Función para mostrar la alerta de progreso no encontrado
@@ -124,6 +137,11 @@ function mostrarAlertaProgresoNoEncontrado() {
 function ocultarAlertaProgresoNoEncontrado() {
     const alerta = document.getElementById('progresoNoEncontrado');
     alerta.classList.add('hidden');
+
+    // Ocultar la alerta después de 3 segundos
+    setTimeout(function () {
+        alerta.classList.add('hidden');
+    }, 3000); // 3 segundos
 }
 
 // Función para mostrar botones de progreso
@@ -145,10 +163,10 @@ function ocultarBotonesProgreso() {
 function eliminarContenido() {
     // Obtener todos los elementos editables
     const editables = document.querySelectorAll('.editor');
-    
+
     // Obtener todos los elementos textarea
     const textareas = document.querySelectorAll('textarea');
-    
+
     // Iterar sobre cada elemento editable
     editables.forEach(editable => {
         // Reemplazar el contenido con el marcador de posición
@@ -170,7 +188,7 @@ function eliminarContenido() {
 
     // Ocultar la alerta después de un tiempo
     setTimeout(function () {
-        alerta.classList.add('hidden');
+        contenidoEliminado.classList.add('hidden');
     }, 3000); // Ocultar después de 3 segundos (3000 milisegundos)
 }
 
