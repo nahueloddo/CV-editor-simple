@@ -245,21 +245,32 @@ function agregarFechaContenido(boton) {
     const contenedor = boton.parentElement;
     const nuevoContenido = contenedor.cloneNode(true);
 
-    // Vaciar el contenido clonado
-    const editorClonado = nuevoContenido.querySelector('.editor');
-    editorClonado.innerHTML = ''; // Vaciar el contenido
+    // Vaciar los textarea clonados
+    const textareasClonados = nuevoContenido.querySelectorAll('textarea');
+    textareasClonados.forEach(textarea => {
+        textarea.value = ''; // Vaciar contenido
+    });
 
-    // Agregar el placeholder al editor clonado
-    const placeholder = document.createElement('span');
-    placeholder.classList.add('placeholder');
-    placeholder.textContent = 'Escribe aquí...';
-    editorClonado.appendChild(placeholder);
+    // Vaciar los div con clase 'editor' clonados y agregar placeholder
+    const editoresClonados = nuevoContenido.querySelectorAll('.editor');
+    editoresClonados.forEach(editor => {
+        editor.innerHTML = ''; // Vaciar contenido
+
+        // Agregar el placeholder al editor clonado
+        const placeholder = document.createElement('span');
+        placeholder.classList.add('placeholder');
+        placeholder.textContent = 'Escribe aquí...';
+        editor.appendChild(placeholder);
+    });
 
     // Insertar el bloque clonado en el DOM
     contenedor.parentNode.insertBefore(nuevoContenido, contenedor.nextSibling);
 
-    // Inicializar CKEditor en el bloque clonado
-    CKEDITOR.inline(editorClonado);
+    // Inicializar CKEditor en los bloques clonados
+    const editoresClonadosArray = Array.from(editoresClonados);
+    editoresClonadosArray.forEach(editor => {
+        CKEDITOR.inline(editor);
+    });
 
     // Mostrar el botón de eliminar
     const botonEliminar = nuevoContenido.querySelector('.boton-eliminar');
