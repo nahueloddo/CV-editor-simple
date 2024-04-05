@@ -239,9 +239,14 @@ textarea::placeholder { /* Modern browsers */
     .boton, .boton-foto button {
         display: none;
     }
+    .double-line {
+        white-space: nowrap;
+        margin-right: 50px;
+    }
     .single-line {
         white-space: nowrap;
-    }
+        margin-right: 88px;
+    }    
     .flex {
         display: flex;
         flex-wrap: nowrap;
