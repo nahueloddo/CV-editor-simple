@@ -109,15 +109,10 @@ function mostrarAlertaContenidoGuardado() {
 function mostrarAlertaProgresoCargado() {
     const alerta = document.getElementById('progresoCargado');
     alerta.classList.remove('hidden');
-}
-
-// Función para ocultar la alerta de progreso cargado correctamente
-function ocultarAlertaProgresoCargado() {
-    const alerta = document.getElementById('progresoCargado');
-    alerta.classList.add('hidden');
+    
     // Ocultar la alerta después de un tiempo
     setTimeout(function() {
-        alerta.classList.add('hidden');
+        ocultarAlertaProgresoCargado();
     }, 3000); // Ocultar después de 3 segundos (3000 milisegundos)
 }
 
@@ -125,15 +120,10 @@ function ocultarAlertaProgresoCargado() {
 function mostrarAlertaProgresoNoEncontrado() {
     const alerta = document.getElementById('progresoNoEncontrado');
     alerta.classList.remove('hidden');
-}
-
-// Función para ocultar la alerta de progreso no encontrado
-function ocultarAlertaProgresoNoEncontrado() {
-    const alerta = document.getElementById('progresoNoEncontrado');
-    alerta.classList.add('hidden');
+    
     // Ocultar la alerta después de un tiempo
     setTimeout(function() {
-        alerta.classList.add('hidden');
+        ocultarAlertaProgresoNoEncontrado();
     }, 3000); // Ocultar después de 3 segundos (3000 milisegundos)
 }
 
