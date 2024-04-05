@@ -130,7 +130,8 @@ textarea::placeholder { /* Modern browsers */
     #informacion-personal textarea {
 		margin-bottom: 5px;
         text-align: justify;
-        width: 100%;		
+        width: 100%;
+        overflow: hidden;		
     }
     #informacion-personal label {
 		margin-bottom: 5px;
