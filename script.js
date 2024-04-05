@@ -146,14 +146,20 @@ function eliminarContenido() {
     // Obtener todos los elementos que se desea borrar
     const elementos = document.querySelectorAll('div[contenteditable], textarea');
 
-    // Iterar sobre los elementos y borrar su contenido
-    elementos.forEach(elemento => {
-        elemento.textContent = '';
+
+    // Iterar sobre cada elemento editable
+    editables.forEach(editable => {
+        // Reemplazar el contenido con el marcador de posición
+        const placeholder = document.createElement('span');
+        placeholder.classList.add('placeholder');
+        placeholder.textContent = 'Escribe aquí...';
+        editable.innerHTML = ''; // Limpiar contenido existente
+        editable.appendChild(placeholder); // Agregar marcador de posición
     });
 
-    // Mostrar la alerta de contenido eliminado
-    const alerta = document.getElementById('contenidoEliminado');
-    alerta.classList.remove('hidden');
+    // Mostrar alerta de contenido eliminado
+    const contenidoEliminado = document.getElementById('contenidoEliminado');
+    contenidoEliminado.classList.remove('hidden');
 
     // Ocultar la alerta después de un tiempo
     setTimeout(function () {
