@@ -210,7 +210,7 @@ textarea::placeholder { /* Modern browsers */
         width: 60%; /* Ancho del 60% del contenedor padre */
     }
     .guardarPDF, .guardarProgreso, .cargarProgreso, .eliminarContenido {
-        margin-left: 80%!important;
+        margin-left: 77%!important;
         margin-bottom: 10px;
 		width: 20%;
     }
