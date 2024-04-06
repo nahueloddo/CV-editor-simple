@@ -131,17 +131,19 @@ textarea::placeholder { /* Modern browsers */
 		display: none;	
     }
     #informacion-personal textarea {
-		margin-bottom: 5px;
+		margin-bottom: 20px;
         text-align: justify;
         width: 100%;
-        overflow: hidden;		
+        overflow: hidden;
+        font-size:large;		
     }
     #informacion-personal label {
 		margin-bottom: 5px;
 		padding-left: 0.5rem;
         width: 100%;
 		border-bottom: 1px solid rgb(209 213 219);
-		padding-bottom: 5px;		
+		padding-bottom: 5px;
+        font-size:large;        		
     }	
     #informacion-personal .mb-4,
     #informacion-personal .mt-4 {
@@ -168,8 +170,14 @@ textarea::placeholder { /* Modern browsers */
 	.editor {
 		max-width:100%;
 		overflow:hidden;
-        resize: vertical;        
+        resize: vertical;
+        font-size:large;                
 	}
+    .guardarPDF, .guardarProgreso, .cargarProgreso, .eliminarContenido {
+        margin-left: 0!important;
+		width: 100%;
+        font-size:large;        		
+    }
 }
 @media screen and (min-width: 640px) {
     /* Cambios para pantallas más grandes */
