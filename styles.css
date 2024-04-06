@@ -163,6 +163,7 @@ textarea::placeholder { /* Modern browsers */
         width: -webkit-fill-available;
         max-width: 100%;
         margin-bottom: 10px;
+        margin-right: 0 !important;
     }
 	.editor {
 		max-width:100%;
