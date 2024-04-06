@@ -212,7 +212,7 @@ textarea::placeholder { /* Modern browsers */
     .guardarPDF, .guardarProgreso, .cargarProgreso, .eliminarContenido {
         margin-left: 80%!important;
         margin-bottom: 10px;
-		width: auto;
+		width: 20%;
     }
 }
 
