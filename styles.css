@@ -159,7 +159,7 @@ textarea::placeholder { /* Modern browsers */
 	#formacion-educativa .items-start	{
 		flex-wrap:wrap;		
     }
-    #fecha-1, #fecha-2 {
+    #fecha-1, #fecha-2, .editor-mini {
         width: -webkit-fill-available;
         max-width: 100%;
         margin-bottom: 10px;
@@ -168,12 +168,6 @@ textarea::placeholder { /* Modern browsers */
 		max-width:100%;
 		overflow:hidden;
         resize: vertical;        
-	}
-
-	.editor-mini {
-        width: -webkit-fill-available;
-		max-width: 80%;
-        margin-bottom: 20px;        	
 	}
 }
 @media screen and (min-width: 640px) {
