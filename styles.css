@@ -161,7 +161,8 @@ textarea::placeholder { /* Modern browsers */
     }
     #fecha-1, #fecha-2 {
         width: -webkit-fill-available;
-        max-width: 78%;
+        max-width: 100%;
+        margin-bottom: 10px;
     }
 	.editor {
 		max-width:100%;
@@ -170,8 +171,9 @@ textarea::placeholder { /* Modern browsers */
 	}
 
 	.editor-mini {
-		max-width:66.6666%;
-		margin-bottom:20px;	
+        width: -webkit-fill-available;
+		max-width: 80%;
+        margin-bottom: 20px;        	
 	}
 }
 @media screen and (min-width: 640px) {
