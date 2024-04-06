@@ -159,6 +159,10 @@ textarea::placeholder { /* Modern browsers */
 	#formacion-educativa .items-start	{
 		flex-wrap:wrap;		
     }
+    #fecha-1, #fecha-2 {
+        width: -webkit-fill-available;
+        max-width: 78%;
+    }
 	.editor {
 		max-width:100%;
 		overflow:hidden;
