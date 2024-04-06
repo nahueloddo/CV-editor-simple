@@ -178,6 +178,9 @@ textarea::placeholder { /* Modern browsers */
 		width: 100%;
         font-size:large;        		
     }
+    .cke_editable, .placeholder, .empty{
+        font-size:large;	
+    }    
 }
 @media screen and (min-width: 640px) {
     /* Cambios para pantallas más grandes */
