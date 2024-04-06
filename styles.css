@@ -178,7 +178,7 @@ textarea::placeholder { /* Modern browsers */
 		width: 100%;
         font-size:large;        		
     }
-    .cke_editable, .placeholder, .empty{
+    .cke_editable, .placeholder, .empty, .alerta{
         font-size:large;	
     }    
 }
