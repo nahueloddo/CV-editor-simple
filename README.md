@@ -34,7 +34,7 @@ CV Editor Simple es una aplicación web que te permite crear y gestionar tu curr
 
 ## Contribución 🤝
 
-Este proyecto es para uso personal, por lo tanto, no se harán demasiadas modificaciones estructurales. Invito a que la comunidad realice forks para mejorar el proyecto.
+Este proyecto fue ideado para uso personal, por lo tanto, **no se harán mayores modificaciones estructurales**. Invito a que la comunidad realice forks para mejorar el proyecto.
 
 ## Licencia 📜
 
