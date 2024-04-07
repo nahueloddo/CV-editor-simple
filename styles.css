@@ -170,7 +170,7 @@ textarea::placeholder { /* Modern browsers */
     }
 	.editor {
 		max-width:100%;
-		overflow:hidden;
+		overflow:scroll;
         resize: vertical;
         font-size:large;                
 	}
