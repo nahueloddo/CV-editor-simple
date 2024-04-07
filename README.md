@@ -1,9 +1,9 @@
-# CV Editor Simple 📝
+# CV EDITOR SIMPLE 📝
 
 **CV Editor Simple** es una aplicación web que te permite crear y gestionar tu currículum vitae de forma interactiva. Con esta herramienta, puedes agregar contenido para tu currículum, guardar y recargar tu progreso localmente y exportar tu currículum en formato PDF.
 
 
-## Características 🚀
+## CARACTERÍSTICAS 🚀
 
 - **Creación dinámica:** Redacta fácilmente secciones como información personal, formación educativa, experiencia laboral y habilidades.
 - **Agregar foto:** Puedes agregar una foto para tu CV.
@@ -16,7 +16,7 @@
 - **Ideal para CV de 1 página:** Este proyecto fue pensado para CV simples de 1 página, o 2 máximo, preferentemente. Aunque debería poder adaptarse a múltiples páginas sin inconvenientes.
 
 
-## Tecnologías Utilizadas 💻
+## TECNOLOGÍAS UTILIZADAS 💻
 
 - HTML5, CSS3 y Tailwind CSS
 - JavaScript
@@ -25,7 +25,7 @@
 - FontAwesome
 
 
-## Instalación y Uso 📌
+## INSTALACIÓN Y USO 📌
 
 1. Clona este repositorio en tu máquina local:
     ```bash
@@ -43,12 +43,12 @@
 > ```<div id="titulo" class="font-semibold text-4xl text-center py-4">NOMBRE COMPLETO</div><div id="subtitulo" class="text-4xl text-center">DESCRIPCIÓN</div>```.  
 
 
-## Contribución 🤝
+## CONTRIBUCIONES 🤝
 
 Este proyecto fue ideado para **uso personal**, por lo tanto, **no se harán mayores modificaciones estructurales**. Invito a que la comunidad realice forks para mejorar el proyecto.
 
 
-## Licencia 📜
+## LICENCIA 📜
 
 [![License](https://img.shields.io/github/license/nahueloddo/CV-editor-simple?label=license&style=for-the-badge)](./LICENSE)
 
