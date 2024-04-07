@@ -25,7 +25,7 @@
 - FontAwesome
 
 
-## Uso 📌
+## Instalación y Uso 📌
 
 1. Clona este repositorio en tu máquina local:
     ```bash
