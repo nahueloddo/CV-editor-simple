@@ -182,6 +182,7 @@ const editables = document.querySelectorAll('.editor');
 editables.forEach(editable => {
     editable.addEventListener('focus', () => {
         editable.style.color = '#111'; // Cambiar el color del texto cuando se enfoca
+        editable.style.fontSize ='large';        
     });
 
     // Agregar evento blur para restaurar el color del placeholder si el contenido está vacío
@@ -196,6 +197,7 @@ editables.forEach(editable => {
     editable.addEventListener('input', () => {
         if (editable.textContent.trim() !== '') {
             editable.style.color = '#111'; // Mantener el color del texto si hay contenido
+            editable.style.fontSize ='large';            
         }
     });
 });
