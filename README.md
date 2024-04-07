@@ -1,6 +1,6 @@
 # CV Editor Simple 📝
 
-CV Editor Simple es una aplicación web que te permite crear y gestionar tu currículum vitae de forma interactiva. Con esta herramienta, puedes agregar contenido para tu currículum, guardar y recargar tu progreso localmente y exportar tu currículum en formato PDF.
+**CV Editor Simple** es una aplicación web que te permite crear y gestionar tu currículum vitae de forma interactiva. Con esta herramienta, puedes agregar contenido para tu currículum, guardar y recargar tu progreso localmente y exportar tu currículum en formato PDF.
 
 ## Características 🚀
 
@@ -31,6 +31,9 @@ CV Editor Simple es una aplicación web que te permite crear y gestionar tu curr
 3. Completa los campos con tu información personal, educativa y laboral, entre otras.
 4. Utiliza los botones de acción para guardar, cargar o exportar tu currículum a PDF.
 5. ¡Listo! Tu currículum vitae está ahora listo para ser impreso o compartido.
+
+[! Puedes agregar tu nombre y/o descripción modificando el siguiente código ```<div id="titulo" class="font-semibold text-4xl text-center py-4">Nahuel Alejandro Oddo</div>
+        <div id="subtitulo" class="text-4xl text-center">Museólogo y Especialista informático</div>```]   
 
 ## Contribución 🤝
 
