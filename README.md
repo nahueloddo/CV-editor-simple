@@ -40,7 +40,7 @@
 
 > [!TIP]
 > Puedes agregar tu nombre y/o descripción modificando el siguiente código:
-> ```<div id="titulo" class="font-semibold text-4xl text-center py-4">Nahuel Alejandro Oddo</div><div id="subtitulo" class="text-4xl text-center">Museólogo y Especialista informático</div>```.  
+> ```<div id="titulo" class="font-semibold text-4xl text-center py-4">**Nombre Completo**</div><div id="subtitulo" class="text-4xl text-center">**Descripción**</div>```.  
 
 
 ## Contribución 🤝
