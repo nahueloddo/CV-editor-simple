@@ -52,4 +52,4 @@ Este proyecto fue ideado para **uso personal**, por lo tanto, **no se harán may
 
 Este proyecto está licenciado bajo la [**Licencia MIT**](LICENSE). Consulta el enlace para más detalles.
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/9018d448-9e4c-44ac-9b5f-e717d866f141/deploy-status)](https://app.netlify.com/sites/cv-editor-simple/deploys)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) [![Netlify](https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7)](https://cv-editor-simple.netlify.app/)
