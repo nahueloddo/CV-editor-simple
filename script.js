@@ -188,6 +188,7 @@ editables.forEach(editable => {
     editable.addEventListener('blur', () => {
         if (editable.textContent.trim() === '') {
             editable.style.color = 'gray'; // Restaurar el color del placeholder si el contenido está vacío
+            editable.style.fontSize ='large';
         }
     });
 
