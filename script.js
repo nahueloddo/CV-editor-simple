@@ -181,23 +181,20 @@ const editables = document.querySelectorAll('.editor');
 // Agregar evento focus para cambiar el color del texto cuando el usuario está escribiendo
 editables.forEach(editable => {
     editable.addEventListener('focus', () => {
-        editable.style.color = '#111'; // Cambiar el color del texto cuando se enfoca
-        editable.style.fontSize ='large';        
+        editable.style.color = '#111'; // Cambiar el color del texto cuando se enfoca        
     });
 
     // Agregar evento blur para restaurar el color del placeholder si el contenido está vacío
     editable.addEventListener('blur', () => {
         if (editable.textContent.trim() === '') {
             editable.style.color = 'gray'; // Restaurar el color del placeholder si el contenido está vacío
-            editable.style.fontSize ='large';
         }
     });
 
     // Agregar evento input para detectar cambios en el contenido y mantener el color del texto
     editable.addEventListener('input', () => {
         if (editable.textContent.trim() !== '') {
-            editable.style.color = '#111'; // Mantener el color del texto si hay contenido
-            editable.style.fontSize ='large';            
+            editable.style.color = '#111'; // Mantener el color del texto si hay contenido            
         }
     });
 });

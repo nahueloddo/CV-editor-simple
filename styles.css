@@ -166,7 +166,7 @@ textarea::placeholder { /* Modern browsers */
         max-width: 100%;
         margin-bottom: 10px;
         margin-right: 0 !important;
-        font-size:large;        
+        font-size:medium;        
     }
 	.editor {
 		max-width:100%;
@@ -179,7 +179,7 @@ textarea::placeholder { /* Modern browsers */
 		width: 100%;
         font-size:large;        		
     }
-    .cke_editable, .placeholder span, .empty, .alerta{
+    .cke_editable, .empty, .alerta{
         font-size:large;	
     }    
 }
