@@ -17,7 +17,7 @@
 
 ## Tecnologías Utilizadas 💻
 
-- HTML5, CSS3 Y Tailwind CSS
+- HTML5, CSS3 y Tailwind CSS
 - JavaScript
 - JSON Local Storage
 - CKEditor
