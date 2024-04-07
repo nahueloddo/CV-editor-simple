@@ -5,13 +5,14 @@
 
 ## Características 🚀
 
-- **Creación dinámica:** Agrega fácilmente secciones como información personal, formación educativa, experiencia laboral y habilidades.
+- **Creación dinámica:** Redacta fácilmente secciones como información personal, formación educativa, experiencia laboral y habilidades.
 - **Guardado de contenido:** Tu progreso se guarda en el almacenamiento local del navegador.
 - **Recarga de contenido:** Tu progreso se recarga en el almacenamiento local del navegador.
 - **Eliminar contenido:** Tu contenido se elimina, en caso de que quieras volver a comenzar a redactar el CV.
 - **Exportación a PDF:** Descarga tu currículum en formato PDF para imprimirlo o enviarlo digitalmente.
 - **Interfaz intuitiva:** Una interfaz fácil de usar con indicaciones claras y botones de acción bien definidos.
 - **Responsive Design:** Diseñado para adaptarse a diferentes dispositivos, desde móviles hasta escritorios.
+- **Ideal para CV de 1 página:** Este proyecto fue pensado para CV simples de 1 página, o 2 máximo, preferentemente. Aunque debería poder adaptarse a múltiples páginas sin inconvenientes.
 
 
 ## Tecnologías Utilizadas 💻
