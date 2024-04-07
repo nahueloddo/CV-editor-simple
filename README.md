@@ -2,6 +2,7 @@
 
 **CV Editor Simple** es una aplicación web que te permite crear y gestionar tu currículum vitae de forma interactiva. Con esta herramienta, puedes agregar contenido para tu currículum, guardar y recargar tu progreso localmente y exportar tu currículum en formato PDF.
 
+
 ## Características 🚀
 
 - **Creación dinámica:** Agrega fácilmente secciones como información personal, formación educativa, experiencia laboral y habilidades.
@@ -12,6 +13,7 @@
 - **Interfaz intuitiva:** Una interfaz fácil de usar con indicaciones claras y botones de acción bien definidos.
 - **Responsive Design:** Diseñado para adaptarse a diferentes dispositivos, desde móviles hasta escritorios.
 
+
 ## Tecnologías Utilizadas 💻
 
 - HTML5, CSS3 Y Tailwind CSS
@@ -19,6 +21,7 @@
 - JSON Local Storage
 - CKEditor
 - FontAwesome
+
 
 ## Uso 📌
 
@@ -32,13 +35,16 @@
 4. Utiliza los botones de acción para guardar, cargar o exportar tu currículum a PDF.
 5. ¡Listo! Tu currículum vitae está ahora listo para ser impreso o compartido.
 
+
 > [!TIP]
 > Puedes agregar tu nombre y/o descripción modificando el siguiente código:
 > ```<div id="titulo" class="font-semibold text-4xl text-center py-4">Nahuel Alejandro Oddo</div><div id="subtitulo" class="text-4xl text-center">Museólogo y Especialista informático</div>```.  
 
+
 ## Contribución 🤝
 
 Este proyecto fue ideado para uso personal, por lo tanto, **no se harán mayores modificaciones estructurales**. Invito a que la comunidad realice forks para mejorar el proyecto.
+
 
 ## Licencia 📜
 
