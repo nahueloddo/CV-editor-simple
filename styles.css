@@ -108,6 +108,12 @@ textarea::placeholder { /* Modern browsers */
 .alerta {
     position: relative;
     z-index: 1000;
+}
+.copy {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 600;    
 }    
 @media (max-width: 640px) {
     #encabezado {
@@ -236,6 +242,7 @@ textarea::placeholder { /* Modern browsers */
     .none::-webkit-resizer,
     .guardarProgreso,
     .cargarProgreso,
+    .copy,
     #eliminarContenido,    
     #contenidoGuardado,
     #progresoCargado,
