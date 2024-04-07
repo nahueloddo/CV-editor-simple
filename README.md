@@ -6,6 +6,7 @@
 ## Características 🚀
 
 - **Creación dinámica:** Redacta fácilmente secciones como información personal, formación educativa, experiencia laboral y habilidades.
+- **Agregar foto:** Puedes agregar una foto para tu CV.
 - **Guardado de contenido:** Tu progreso se guarda en el almacenamiento local del navegador.
 - **Recarga de contenido:** Tu progreso se recarga en el almacenamiento local del navegador.
 - **Eliminar contenido:** Tu contenido se elimina, en caso de que quieras volver a comenzar a redactar el CV.
