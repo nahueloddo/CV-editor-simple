@@ -154,7 +154,7 @@ textarea::placeholder { /* Modern browsers */
     #trayectoria-laboral .editor > div,
 	#trayectoria-laboral .editor > div	{
 		max-height:25px;
-		max-width:33.33333%;
+		max-width:100%;
 		margin-bottom:20px;		
     }
     #trayectoria-laboral .items-start,
@@ -302,4 +302,3 @@ textarea::placeholder { /* Modern browsers */
         width: 75%;
     }
 }
-
