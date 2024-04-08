@@ -200,19 +200,25 @@ editables.forEach(editable => {
 });
 
 // Para .editor
-const editorDiv = document.querySelectorAll('div[contenteditable="true"]');
-editorDiv.addEventListener("input", e => {
-    editorDiv.style.height = '50px'; // Establecer una altura mínima
-    editorDiv.style.height = (editorDiv.scrollHeight + 2) + 'px'; // Ajustar la altura según el contenido
+const editorDivs = document.querySelectorAll('div[contenteditable="true"]');
+editorDivs.forEach(editorDiv => {
+    editorDiv.addEventListener("input", e => {
+        // Establecer una altura mínima
+        editorDiv.style.minHeight = '50px';
+        // Ajustar la altura según el contenido
+        editorDiv.style.height = 'auto'; // Permitir que el div se expanda
+        editorDiv.style.height = (editorDiv.scrollHeight + 2) + 'px';
 
-    // Aplicar el max-height
-    const maxHeight = 150; // Establecer la altura máxima deseada
-    if (editorDiv.scrollHeight > maxHeight) {
-        editorDiv.style.overflowY = 'scroll'; // Hacer que el contenido sea desplazable verticalmente si excede la altura máxima
-        editorDiv.style.height = maxHeight + 'px'; // Establecer la altura máxima
-    } else {
-        editorDiv.style.overflowY = 'hidden'; // Ocultar la barra de desplazamiento si el contenido no excede la altura máxima
-    }
+        // Aplicar el max-height solo si es necesario para evitar el desbordamiento
+        const maxHeight = 150; // Establecer la altura máxima deseada
+        if (editorDiv.scrollHeight > maxHeight) {
+            editorDiv.style.overflowY = 'scroll'; // Hacer que el contenido sea desplazable verticalmente si excede la altura máxima
+            editorDiv.style.maxHeight = maxHeight + 'px'; // Establecer la altura máxima
+        } else {
+            editorDiv.style.overflowY = 'hidden'; // Ocultar la barra de desplazamiento si el contenido no excede la altura máxima
+            editorDiv.style.maxHeight = 'none'; // Permitir que el div se expanda más allá de la altura máxima si es necesario
+        }
+    });
 });
 
 // Para textareas de "Fecha"
@@ -220,25 +226,31 @@ const textareas = document.querySelectorAll('textarea[placeholder="Fecha (Ej: Ma
 
 textareas.forEach(textarea => {
     textarea.addEventListener("input", e => {
-        textarea.style.height = '50px';
+        textarea.style.height = 'auto'; // Permitir que el textarea se expanda
         textarea.style.height = (textarea.scrollHeight + 2) + 'px';
     });
 });
 
 // Para .editor-mini
-const editorMiniDiv = document.querySelectorAll('.editor-mini');
-editorMiniDiv.addEventListener("input", e => {
-    editorMiniDiv.style.height = '50px'; // Establecer una altura mínima
-    editorMiniDiv.style.height = (editorMiniDiv.scrollHeight + 2) + 'px'; // Ajustar la altura según el contenido
+const editorMiniDivs = document.querySelectorAll('.editor-mini');
+editorMiniDivs.forEach(editorMiniDiv => {
+    editorMiniDiv.addEventListener("input", e => {
+        // Establecer una altura mínima
+        editorMiniDiv.style.minHeight = '50px';
+        // Ajustar la altura según el contenido
+        editorMiniDiv.style.height = 'auto'; // Permitir que el div se expanda
+        editorMiniDiv.style.height = (editorMiniDiv.scrollHeight + 2) + 'px';
 
-    // Aplicar el max-height
-    const maxHeight = 120; // Establecer la altura máxima deseada
-    if (editorMiniDiv.scrollHeight > maxHeight) {
-        editorMiniDiv.style.overflowY = 'scroll'; // Hacer que el contenido sea desplazable verticalmente si excede la altura máxima
-        editorMiniDiv.style.height = maxHeight + 'px'; // Establecer la altura máxima
-    } else {
-        editorMiniDiv.style.overflowY = 'hidden'; // Ocultar la barra de desplazamiento si el contenido no excede la altura máxima
-    }
+        // Aplicar el max-height solo si es necesario para evitar el desbordamiento
+        const maxHeight = 120; // Establecer la altura máxima deseada
+        if (editorMiniDiv.scrollHeight > maxHeight) {
+            editorMiniDiv.style.overflowY = 'scroll'; // Hacer que el contenido sea desplazable verticalmente si excede la altura máxima
+            editorMiniDiv.style.maxHeight = maxHeight + 'px'; // Establecer la altura máxima
+        } else {
+            editorMiniDiv.style.overflowY = 'hidden'; // Ocultar la barra de desplazamiento si el contenido no excede la altura máxima
+            editorMiniDiv.style.maxHeight = 'none'; // Permitir que el div se expanda más allá de la altura máxima si es necesario
+        }
+    });
 });
 
 function agregarFechaContenido(boton) {
