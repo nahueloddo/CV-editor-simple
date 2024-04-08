@@ -200,7 +200,7 @@ editables.forEach(editable => {
 });
 
 // Para .editor
-const editorDiv = document.querySelector('.editor');
+const editorDiv = document.querySelector('div[contenteditable="true"]');
 editorDiv.addEventListener("input", e => {
     editorDiv.style.height = '50px'; // Establecer una altura mínima
     editorDiv.style.height = (editorDiv.scrollHeight + 2) + 'px'; // Ajustar la altura según el contenido
