@@ -200,19 +200,19 @@ editables.forEach(editable => {
 });
 
 // Para .editor
-const editorDiv = document.querySelector('div[contenteditable="true"]');
+const editorDiv = document.querySelectorAll('div[contenteditable="true"]');
 editorDiv.addEventListener("input", e => {
     editorDiv.style.height = '50px'; // Establecer una altura mínima
     editorDiv.style.height = (editorDiv.scrollHeight + 2) + 'px'; // Ajustar la altura según el contenido
 
     // Aplicar el max-height
-    // const maxHeight = 150; // Establecer la altura máxima deseada
-    // if (editorDiv.scrollHeight > maxHeight) {
-    //    editorDiv.style.overflowY = 'scroll'; // Hacer que el contenido sea desplazable verticalmente si excede la altura máxima
-    //    editorDiv.style.height = maxHeight + 'px'; // Establecer la altura máxima
-    // } else {
-    //    editorDiv.style.overflowY = 'hidden'; // Ocultar la barra de desplazamiento si el contenido no excede la altura máxima
-    // }
+    const maxHeight = 150; // Establecer la altura máxima deseada
+    if (editorDiv.scrollHeight > maxHeight) {
+        editorDiv.style.overflowY = 'scroll'; // Hacer que el contenido sea desplazable verticalmente si excede la altura máxima
+        editorDiv.style.height = maxHeight + 'px'; // Establecer la altura máxima
+    } else {
+        editorDiv.style.overflowY = 'hidden'; // Ocultar la barra de desplazamiento si el contenido no excede la altura máxima
+    }
 });
 
 // Para textareas de "Fecha"
@@ -226,7 +226,7 @@ textareas.forEach(textarea => {
 });
 
 // Para .editor-mini
-const editorMiniDiv = document.querySelector('.editor-mini');
+const editorMiniDiv = document.querySelectorAll('.editor-mini');
 editorMiniDiv.addEventListener("input", e => {
     editorMiniDiv.style.height = '50px'; // Establecer una altura mínima
     editorMiniDiv.style.height = (editorMiniDiv.scrollHeight + 2) + 'px'; // Ajustar la altura según el contenido
