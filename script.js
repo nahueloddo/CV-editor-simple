@@ -206,13 +206,13 @@ editorDiv.addEventListener("input", e => {
     editorDiv.style.height = (editorDiv.scrollHeight + 2) + 'px'; // Ajustar la altura según el contenido
 
     // Aplicar el max-height
-    const maxHeight = 150; // Establecer la altura máxima deseada
-    if (editorDiv.scrollHeight > maxHeight) {
-        editorDiv.style.overflowY = 'scroll'; // Hacer que el contenido sea desplazable verticalmente si excede la altura máxima
-        editorDiv.style.height = maxHeight + 'px'; // Establecer la altura máxima
-    } else {
-        editorDiv.style.overflowY = 'hidden'; // Ocultar la barra de desplazamiento si el contenido no excede la altura máxima
-    }
+    // const maxHeight = 150; // Establecer la altura máxima deseada
+    // if (editorDiv.scrollHeight > maxHeight) {
+    //    editorDiv.style.overflowY = 'scroll'; // Hacer que el contenido sea desplazable verticalmente si excede la altura máxima
+    //    editorDiv.style.height = maxHeight + 'px'; // Establecer la altura máxima
+    // } else {
+    //    editorDiv.style.overflowY = 'hidden'; // Ocultar la barra de desplazamiento si el contenido no excede la altura máxima
+    // }
 });
 
 // Para textareas de "Fecha"
