@@ -1,4 +1,4 @@
-![CV EDITOR SIMPLE](https://ibb.co/Kznfq92)
+![CV EDITOR SIMPLE](https://i.ibb.co/Kznfq92/PNG-GITHUB-CV-EDITOR-SIMPLE.png)
 
 # CV EDITOR SIMPLE 📝
 
