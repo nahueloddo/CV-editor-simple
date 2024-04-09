@@ -1,4 +1,4 @@
-![CV EDITOR SIMPLE]![image](https://github.com/nahueloddo/CV-editor-simple/assets/160946760/afa0e7c6-90ac-4459-9a2f-d0ea3587ae87)
+![image](https://github.com/nahueloddo/CV-editor-simple/assets/160946760/afa0e7c6-90ac-4459-9a2f-d0ea3587ae87)
 
 
 # CV EDITOR SIMPLE 📝
