@@ -1,6 +1,4 @@
-![image](https://github.com/nahueloddo/CV-editor-simple/assets/160946760/afa0e7c6-90ac-4459-9a2f-d0ea3587ae87)
-
-
+![texto cualquiera por si no carga la imagen](https://i.ibb.co/F8ghvFV/PNG-GITHUB-CV-EDITOR-SIMPLE.png)
 # CV EDITOR SIMPLE 📝
 
 **CV Editor Simple** es una aplicación web que te permite crear y gestionar tu currículum vitae de forma interactiva. Con esta herramienta, puedes agregar contenido para tu currículum, guardar y recargar tu progreso localmente y exportar tu currículum en formato PDF.
