@@ -1,3 +1,5 @@
+![CV EDITOR SIMPLE](https://ibb.co/Kznfq92)
+
 # CV EDITOR SIMPLE 📝
 
 **CV Editor Simple** es una aplicación web que te permite crear y gestionar tu currículum vitae de forma interactiva. Con esta herramienta, puedes agregar contenido para tu currículum, guardar y recargar tu progreso localmente y exportar tu currículum en formato PDF.
