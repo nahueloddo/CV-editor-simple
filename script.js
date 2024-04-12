@@ -68,6 +68,13 @@ function guardarProgreso() {
         contenido[`contenidoClonado-${id}`] = contenidoClonado;
     });
 
+    // Guardar contenido de textareas de fecha clonados
+    const textareasClonadas = document.querySelectorAll('textarea[id^="fecha-textarea-"]');
+    textareasClonadas.forEach(textarea => {
+        const idUnico = textarea.id.split('-')[2]; // Extraer el identificador único del ID del textarea
+        contenido[`fecha-${idUnico}`] = textarea.value; // Guardar el contenido del textarea con su identificador único
+    });
+
     const contenidoJSON = JSON.stringify(contenido);
     localStorage.setItem('progreso', contenidoJSON);
 
@@ -91,6 +98,16 @@ function cargarProgreso() {
                 }
             }
         });
+
+        // Cargar la fecha de cada textarea clonado
+        const textareasClonadas = document.querySelectorAll('textarea[id^="fecha-textarea-"]');
+        textareasClonadas.forEach(textarea => {
+            const idUnico = textarea.id.split('-')[2]; // Extraer el identificador único del ID del textarea
+            const fechaGuardada = contenido[`fecha-${idUnico}`]; // Suponiendo que el contenido guardado tiene una clave específica para cada fecha
+            if (fechaGuardada) {
+                textarea.value = fechaGuardada;
+            }
+        });        
 
         document.getElementById('imagen-foto').value = contenido.imagenFoto;
         document.getElementById('fecha-nacimiento').value = contenido.fechaNacimiento;
@@ -280,10 +297,13 @@ function agregarFechaContenido(boton) {
     const identificadorUnico = Date.now(); // O cualquier otro método para generar un identificador único
     nuevoContenido.setAttribute('data-id', identificadorUnico);
 
-    // Vaciar los textarea clonados
+    // Vaciar los textarea clonados y asignarles un identificador único
     const textareasClonados = nuevoContenido.querySelectorAll('textarea');
     textareasClonados.forEach(textarea => {
         textarea.value = ''; // Vaciar contenido
+        // Asignar un identificador único al textarea clonado
+        const idUnicoTextarea = `fecha-textarea-${identificadorUnico}`;
+        textarea.id = idUnicoTextarea;
     });
 
     // Vaciar los div con clase 'editor' clonados y agregar placeholder
