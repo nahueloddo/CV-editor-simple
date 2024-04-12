@@ -60,6 +60,14 @@ function guardarProgreso() {
         remuneracionPretendida: document.getElementById('remuneracion-pretendida').innerHTML
     };
 
+    // Guardar contenido de elementos clonados
+    const elementosClonados = document.querySelectorAll('[data-id]');
+    elementosClonados.forEach(elemento => {
+        const id = elemento.getAttribute('data-id');
+        const contenidoClonado = elemento.innerHTML;
+        contenido[`contenidoClonado-${id}`] = contenidoClonado;
+    });
+
     const contenidoJSON = JSON.stringify(contenido);
     localStorage.setItem('progreso', contenidoJSON);
 
@@ -72,6 +80,17 @@ function cargarProgreso() {
 
     if (contenidoJSON) {
         const contenido = JSON.parse(contenidoJSON);
+
+        // Cargar contenido de elementos clonados
+        Object.keys(contenido).forEach(clave => {
+            if (clave.startsWith('contenidoClonado-')) {
+                const id = clave.split('-')[1];
+                const elemento = document.querySelector(`[data-id="${id}"]`);
+                if (elemento) {
+                    elemento.innerHTML = contenido[clave];
+                }
+            }
+        });
 
         document.getElementById('imagen-foto').value = contenido.imagenFoto;
         document.getElementById('fecha-nacimiento').value = contenido.fechaNacimiento;
@@ -256,6 +275,10 @@ editorMiniDivs.forEach(editorMiniDiv => {
 function agregarFechaContenido(boton) {
     const contenedor = boton.parentElement;
     const nuevoContenido = contenedor.cloneNode(true);
+
+    // Asignar un identificador único a cada elemento clonado
+    const identificadorUnico = Date.now(); // O cualquier otro método para generar un identificador único
+    nuevoContenido.setAttribute('data-id', identificadorUnico);
 
     // Vaciar los textarea clonados
     const textareasClonados = nuevoContenido.querySelectorAll('textarea');
