@@ -243,13 +243,13 @@ editorDivs.forEach(editorDiv => {
         editorDiv.style.minHeight = '50px';
         // Ajustar la altura según el contenido
         editorDiv.style.height = 'auto'; // Permitir que el div se expanda
-        editorDiv.style.height = (editorDiv.scrollHeight + 2) + 'px';
+        /* editorDiv.style.height = (editorDiv.scrollHeight + 2) + 'px'; */
 
         // Aplicar el max-height solo si es necesario para evitar el desbordamiento
         const maxHeight = 150; // Establecer la altura máxima deseada
         if (editorDiv.scrollHeight > maxHeight) {
             editorDiv.style.overflowY = 'scroll'; // Hacer que el contenido sea desplazable verticalmente si excede la altura máxima
-            editorDiv.style.maxHeight = maxHeight + 'px'; // Establecer la altura máxima
+            /* editorDiv.style.maxHeight = maxHeight + 'px'; */ // Establecer la altura máxima
         } else {
             editorDiv.style.overflowY = 'hidden'; // Ocultar la barra de desplazamiento si el contenido no excede la altura máxima
             editorDiv.style.maxHeight = 'none'; // Permitir que el div se expanda más allá de la altura máxima si es necesario
@@ -263,7 +263,7 @@ const textareas = document.querySelectorAll('textarea[placeholder="Fecha (Ej: Ma
 textareas.forEach(textarea => {
     textarea.addEventListener("input", e => {
         textarea.style.height = 'auto'; // Permitir que el textarea se expanda
-        textarea.style.height = (textarea.scrollHeight + 2) + 'px';
+        /* textarea.style.height = (textarea.scrollHeight + 2) + 'px'; */
     });
 });
 
