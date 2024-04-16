@@ -250,7 +250,6 @@ textarea::placeholder { /* Modern browsers */
     #guardarPDF,
     .cke_editable,
     .cke_editable_inline,
-    .cke_contents_ltr,
     .boton, 
     .boton-foto button {
         display: none;
