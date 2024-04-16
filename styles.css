@@ -248,8 +248,6 @@ textarea::placeholder { /* Modern browsers */
     #progresoCargado,
     #progresoNoEncontrado,
     #guardarPDF,
-    .cke_editable,
-    .cke_editable_inline,
     .boton, 
     .boton-foto button {
         display: none;
