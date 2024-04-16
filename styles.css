@@ -259,6 +259,10 @@ textarea::placeholder { /* Modern browsers */
     .boton, .boton-foto button {
         display: none;
     }
+    .editor {
+        line-height: 1.3rem;
+        text-align: justify;
+    }
     .double-line {
         white-space: nowrap;
         margin-right: 50px;
