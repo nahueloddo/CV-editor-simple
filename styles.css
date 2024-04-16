@@ -247,11 +247,7 @@ textarea::placeholder { /* Modern browsers */
     #contenidoGuardado,
     #progresoCargado,
     #progresoNoEncontrado,
-    #guardarPDF,
-    .cke_float, 
-    .cke_top,
-    .boton, 
-    .boton-foto button {
+    #guardarPDF {
         display: none;
     }
 
@@ -259,6 +255,9 @@ textarea::placeholder { /* Modern browsers */
         margin: 0;
         padding: 0;
         box-shadow: none;
+    }
+    .boton, .boton-foto button {
+        display: none;
     }
     .double-line {
         white-space: nowrap;
