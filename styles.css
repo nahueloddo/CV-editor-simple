@@ -247,7 +247,12 @@ textarea::placeholder { /* Modern browsers */
     #contenidoGuardado,
     #progresoCargado,
     #progresoNoEncontrado,
-    #guardarPDF {
+    #guardarPDF,
+    .cke_editable,
+    .cke_editable_inline,
+    .cke_contents_ltr,
+    .boton, 
+    .boton-foto button {
         display: none;
     }
 
@@ -255,9 +260,6 @@ textarea::placeholder { /* Modern browsers */
         margin: 0;
         padding: 0;
         box-shadow: none;
-    }
-    .boton, .boton-foto button {
-        display: none;
     }
     .double-line {
         white-space: nowrap;
@@ -281,7 +283,7 @@ textarea::placeholder { /* Modern browsers */
         margin-bottom: 0.5rem;
     }
     .mt-4 {
-        margin-top: 1rem;
+        margin-top: 0.5rem;
     }
     .items-center {
         align-items: center;
